@@ -1,12 +1,33 @@
 .title,
 .subtitle {
   font-family: $family-heading;
+  font-weight: 200;
+}
+
+.content {
+  a:not(.button) {
+    text-decoration: underline;
+  }
+}
+
+.section-title {
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+.pretitle {
+  font-weight: 700;
+  text-transform: uppercase;
+
+  & + .title {
+    margin-top: 0;
+  }
 }
 
 .section-landing {
-  .title {
-    font-weight: 200;
+  padding: 6rem 1.5rem;
 
+  .title {
     strong {
       font-weight: 900;
     }
@@ -14,8 +35,21 @@
 }
 
 .section-skills {
-  .skills .skill:nth-child(even) {
-    flex-direction: row-reverse;
+  .skills .skill {
+    padding: 2rem 0;
+
+    .title {
+      font-weight: 900;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+
+      .tags {
+        justify-content: flex-end;
+      }
+    }
   }
 }
 

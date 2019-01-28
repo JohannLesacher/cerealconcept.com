@@ -1,9 +1,8 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 const Contact = () => (
-  <section className="section section-contact has-background-light">
+  <section className="section section-contact has-background-light content">
     <div className="container">
       <h2 className="title is-3">Contact</h2>
       <div className="columns">
@@ -70,13 +69,5 @@ const Contact = () => (
     </div>
   </section>
 )
-
-Contact.propTypes = {
-  // siteTitle: PropTypes.string,
-}
-
-Contact.defaultProps = {
-  // siteTitle: ``,
-}
 
 export default Contact

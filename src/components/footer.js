@@ -1,9 +1,7 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 const Footer = () => (
-  <footer className="section section-footer has-background-primary has-text-white">
+  <footer className="section section-footer has-background-dark has-text-white">
     <div className="container">
       <div className="columns">
         <div className="column">
@@ -16,13 +14,5 @@ const Footer = () => (
     </div>
   </footer>
 )
-
-Footer.propTypes = {
-  // siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  // siteTitle: ``,
-}
 
 export default Footer

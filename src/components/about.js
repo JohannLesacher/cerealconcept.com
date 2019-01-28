@@ -1,5 +1,3 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import Logo from '../components/logo'
@@ -27,13 +25,5 @@ const About = () => (
     </div>
   </section>
 )
-
-About.propTypes = {
-  // siteTitle: PropTypes.string,
-}
-
-About.defaultProps = {
-  // siteTitle: ``,
-}
 
 export default About

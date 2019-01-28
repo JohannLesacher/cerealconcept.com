@@ -11,7 +11,10 @@ import ImageEcommerce from '../svg/skill_ecommerce.svg';
 const Skills = () => (
   <section className="section section-skills">
     <div className="container">
-      <h2 className="title is-3">Compétences</h2>
+      <header className="has-text-centered">
+        <h4 className="pretitle has-text-primary is-3">Nos services</h4>
+        <h2 className="title is-2 section-title">Comment pouvons-nous vous aider ?</h2>
+      </header>
       <div className="skills">
         <Skill
           title="Développement de sites sur mesure"

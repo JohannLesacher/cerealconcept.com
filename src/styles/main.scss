@@ -4,8 +4,15 @@
 $family-sans-serif: 'Work Sans', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $family-heading: 'Avenir LT Std', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
+/* Colors */
+$primary: #44C2DE;
+$info: #E07223;
+
 /* utilities */
 @import "~bulma/sass/utilities/_all.sass";
+
+$link: $grey-dark;
+
 /* Base */
 @import "~bulma/sass/base/_all.sass";
 /* Grid */
