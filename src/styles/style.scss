@@ -1,0 +1,25 @@
+.title,
+.subtitle {
+  font-family: $family-heading;
+}
+
+.section-landing {
+  .title {
+    font-weight: 200;
+
+    strong {
+      font-weight: 900;
+    }
+  }
+}
+
+.section-skills {
+  .skills .skill:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
