@@ -11,7 +11,7 @@ const Skill = ({title, description, keywords, image}) => (
     </div>
     <div className="column is-7">
       <h2 className="title is-spaced is-2">{title}</h2>
-      <h4 className="subtitle is-5">{description} <Link to='#contact'>Contactez-nous</Link></h4>
+      <h4 className="subtitle is-5">{description} <small><Link to='#contact'>Contactez-nous</Link></small></h4>
       <div className="tags">
         {keywords ? keywords.map((keyword, i) => (
           <span className="tag" key={i}>{keyword}</span>
