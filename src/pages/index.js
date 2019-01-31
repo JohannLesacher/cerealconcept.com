@@ -7,27 +7,30 @@ import About from '../components/about'
 import Contact from '../components/contact'
 import SEO from '../components/seo'
 
-import ScrollReveal from 'scrollreveal'
+const isBrowser = typeof window !== 'undefined';
+const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
 
 class IndexPage extends React.Component {
   componentDidMount() {
     console.log('IndexPage componentDidMount')
-    ScrollReveal().reveal('.to-reveal', {
-      delay: 0,
-      distance: '50px',
-      origin: 'left',
-      duration: 500,
-      interval: 10,
-      cleanup: true
-    })
+    if (ScrollReveal !== undefined) {
+      ScrollReveal().reveal('.to-reveal', {
+        delay: 0,
+        distance: '50px',
+        origin: 'left',
+        duration: 500,
+        interval: 10,
+        cleanup: true
+      })
 
-    ScrollReveal().reveal('.reveal-spotlight', {
-      distance: '0px',
-      opacity: 0.1,
-      viewFactor: 0.8,
-      duration: 250,
-      cleanup: true
-    });
+      ScrollReveal().reveal('.reveal-spotlight', {
+        distance: '0px',
+        opacity: 0.1,
+        viewFactor: 0.8,
+        duration: 250,
+        cleanup: true
+      });
+    }
   }
 
   render() {
