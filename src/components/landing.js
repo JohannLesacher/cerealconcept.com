@@ -10,7 +10,7 @@ const Landing = () => (
         <div className="column is-7">
           <h1 className="title is-spaced is-1">Artisans du web <strong>spécialistes WordPress</strong> nous développons des <strong>sites web sur-mesure</strong> pour des clients dans le monde entier.</h1>
           <div className="buttons">
-            <Link to='/' className="button is-rounded is-medium is-primary">Discutons de vos projets</Link>
+            <Link to='/#contact' className="button is-rounded is-medium is-primary to-reveal">Discutons de vos projets</Link>
           </div>
         </div>
         <div className="column is-5">
