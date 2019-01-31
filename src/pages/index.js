@@ -7,8 +7,10 @@ import About from '../components/about'
 import Contact from '../components/contact'
 import SEO from '../components/seo'
 
-const isBrowser = typeof window !== 'undefined';
-const ScrollReveal = isBrowser ? require('scrollreveal') : undefined;
+let ScrollReveal = undefined
+if (typeof window !== `undefined`) {
+  ScrollReveal = require("scrollreveal").default
+}
 
 class IndexPage extends React.Component {
   componentDidMount() {
