@@ -15,7 +15,7 @@ const Header = () => (
         <div className="navbar-menu">
           <div className="navbar-end">
             <span className="navbar-item">
-              <Link to="/#contact" className="button is-primary is-rounded">Contact</Link>
+              <button data-target="#contact-modal" className="button is-primary is-rounded modal-button">Contact</button>
             </span>
           </div>
         </div>

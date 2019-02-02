@@ -10,12 +10,14 @@ svg {
 }
 
 a:not(.button):not(.navbar-item) {
-  box-shadow: inset 0 -0.2rem 0 rgba($primary, 0.2);
-  transition: box-shadow 72ms linear;
+  color: $primary-darker;
+  box-shadow: inset 0 -1px 0 rgba($primary-darker, 1);
+  transition: all 50ms linear;
 
   &:hover {
-    box-shadow: inset 0 -0.2rem 0 rgba($primary, 0.8);
-    transition: box-shadow 72ms linear;
+    box-shadow: inset 0 -1px 0 rgba($dark, 1);
+    color: $dark;
+    transition: all 50ms linear;
   }
 }
 
@@ -60,8 +62,154 @@ a:not(.button):not(.navbar-item) {
       }
     }
 
+    .tag {
+      background-color: #f9f8ed;
+      font-weight: 800;
+      color: #363636;
+      font-family: $family-heading;
+    }
+
     svg {
       min-height: 300px;
     }
+  }
+}
+
+.section-about {
+  padding: 6rem 1.5rem;
+
+  .title {
+    font-weight: 900;
+  }
+}
+
+.modal {
+  .modal-close {
+    z-index: 9;
+  }
+
+  .modal-close:hover,
+  .modal-close:focus {
+    background-color: #fff;
+  }
+
+  .modal-close::before,
+  .modal-close::after {
+    background-color: $dark;
+  }
+
+  .modal-close::before {
+    height: 4px;
+  }
+
+  .modal-close::after {
+    width: 4px;
+  }
+
+  .is-large.modal-close {
+    height: 64px;
+    max-height: 64px;
+    max-width: 64px;
+    min-height: 64px;
+    min-width: 64px;
+    width: 64px;
+  }
+
+  .modal-content {
+    background: $primary-lightest;
+    max-width: 100%;
+  }
+  
+  .modal-background {
+    background-color: $primary-lightest;
+    transition: all 172ms ease;
+
+    &:hover {
+      background-color: rgba(214, 214, 214, 0.85);
+      transition: all 172ms ease;
+    }
+  }
+
+  .modal-close:hover + .modal-background {
+    background-color: rgba(214, 214, 214, 0.85);
+    transition: all 172ms ease;
+  }
+}
+
+.section-contact {
+  background-color: $primary-lightest;
+
+  .title {
+    font-weight: 900;
+  }
+
+  .notifications {
+    position: fixed;
+    z-index: 50;
+    top: 2rem;
+    right: 15%;
+    left: 15%;
+  }
+}
+
+.level {
+  .level-item {
+    .title {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+button.is-link {
+  @extend a;
+
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+
+form[name="contact"] {
+  .input,
+  .textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #44c2de;
+    border-radius: 0;
+    color: #363636;
+    box-shadow: none;
+    max-width: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    margin-top: 1.5rem;
+  }
+
+  .textarea {
+    border-left: 2px solid #44c2de;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .label {
+    position: absolute;
+    transition: all 172ms ease-out;
+    left: 0;
+    top: 0;
+    z-index: 0;
+
+    &.is-placeholder {
+      position: absolute;
+      top: 1.5rem;
+      left: 0.5rem;
+      color: grey;
+      transition: all 172ms ease-out;
+    }
+  }
+
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
   }
 }

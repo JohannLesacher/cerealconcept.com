@@ -5,20 +5,31 @@ $family-sans-serif: 'Work Sans', "Helvetica Neue", "Helvetica", "Arial", sans-se
 $family-heading: 'Avenir LT Std', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 /* Colors */
-$primary: #44C2DE;
-$info: #E07223;
+$primary-darker: #0f6d7a;
+$primary-dark: #22a1b2;
+$primary: #44c2de;
+$primary-light: #74dfed;
+$primary-lighter: #b3edf5;
+$primary-lightest: #f2fdff;
+$info: #e07223;
 
 /* utilities */
 @import "~bulma/sass/utilities/_all.sass";
 
 $link: $grey-dark;
 
+/* Modals */
+$modal-content-width: 990px;
+$modal-background-background-color: rgba($primary-lightest, 1);
+$modal-close-dimensions: 80px;
+
+/* Navbar */
+$navbar-breakpoint: 0;
+
 /* Base */
+@import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
-/* Grid */
-@import "~bulma/sass/grid/columns.sass";
 /* Elements */
-// @import "~bulma/sass/elements/box.sass";
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/content.sass";
@@ -26,13 +37,17 @@ $link: $grey-dark;
 @import "~bulma/sass/elements/image.sass";
 @import "~bulma/sass/elements/title.sass";
 @import "~bulma/sass/elements/tag.sass";
+@import "~bulma/sass/elements/notification.sass";
+@import "~bulma/sass/elements/other.sass";
 /* Components */
 @import "~bulma/sass/components/list.sass";
 @import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/components/modal.sass";
+/* Grid */
+@import "~bulma/sass/grid/columns.sass";
 /* Layouts */
 @import "~bulma/sass/layout/section.sass";
 @import "~bulma/sass/layout/footer.sass";
-
 
 /* Custom */
 @import "./style.scss";

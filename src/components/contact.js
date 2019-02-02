@@ -1,73 +1,105 @@
-import { Link } from 'gatsby'
 import React from 'react'
+import Form from './form'
+import Message from './message'
 
-const Contact = () => (
-  <section className="section section-contact has-background-light content">
-    <div className="container">
-      <h2 className="title is-3">Contact</h2>
-      <div className="columns">
-        <div className="column is-4">
-          Tous vos rêves sont réalisables, contactez-nous.
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
+class Contact extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      success: false
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSuccess = this.handleSuccess.bind(this)
+    this.hideNotifications = this.hideNotifications.bind(this)
+  }
+
+  componentDidMount() {
+    if (document !== undefined) {
+      const inputs = document.querySelectorAll('form[name="contact"] .input,form[name="contact"] .textarea')
+
+      inputs.forEach(function(input) {
+        let inputName = input.getAttribute('name')
+        let label = document.querySelector('form[name="contact"] .label[for='+inputName+']')
+
+        if (label) {
+          input.addEventListener('focus', function() {
+            label.classList.remove('is-placeholder')
+          })
+          input.addEventListener('focusout', function() {
+            if (input.value === '') {
+              label.classList.add('is-placeholder')
+            }
+          })
+        }
+      })
+    }
+  }
+
+  handleSuccess() {
+    this.setState({success: true})
+    this.refs.contactform.reset()
+    const hideNotifications = this.hideNotifications
+
+    setTimeout(function() {
+      hideNotifications()
+    }, 10000)
+  }
+
+  hideNotifications() {
+    this.setState({success: false})
+  }
+
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => this.handleSuccess())
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
+  render() {
+    return (
+      <section className="section section-contact">
+        <div className="notifications">
+          {this.state.success &&
+            <Message
+                type="success"
+                text="Merci pour votre sollicitation, nous allons revenir vers vous rapidement. Bonne journée !"
+                hide={this.hideNotifications}
+                />
+          }
         </div>
-        <div className="column is-8">
-          <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="field">
-              <label className="label">Prénom & Nom</label>
-              <div className="control">
-                <input className="input" type="text" name="prenom_et_nom" placeholder="Comment vous appelez-vous ?" required />
-              </div>
-            </div>
+        <div className="has-text-centered">
+          <h4 className="title">Contact</h4>
+          <h2 className="subtitle">Ça vous semble intéressant ? Contactez-nous.</h2>
 
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input className="input" type="email" name="email" placeholder="A quelle adresse peut-on vous joindre" required />
-              </div>
+          <button data-target="#contact-modal" className="button is-primary is-rounded is-medium modal-button">
+            Lancer la discussion
+          </button>
+        </div> 
+        <div className="modal" id="contact-modal">
+          <button className="modal-close is-large" aria-label="close"></button>
+          <div className="modal-background"></div>
+          <div className="modal-content">
+            <div className="section">
+              <Form handleSubmit={this.handleSubmit} ref="contactform"/>
             </div>
-
-            <div className="field">
-              <label className="label">Téléphone</label>
-              <div className="control">
-                <input className="input" type="tel" name="telephone" placeholder="Si vous préférez être contacté par téléphone" />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Entreprise ou organisation</label>
-              <div className="control">
-                <input className="input" type="text" name="entreprise_ou_organisation" placeholder="Comment vous appelez-vous ?" required />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Message</label>
-              <div className="control">
-                <textarea className="textarea" placeholder="Textarea"></textarea>
-              </div>
-            </div>
-
-            <div className="field">
-              <div className="control">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  J'accepte la <Link to="/">politique de confidentialité</Link>
-                </label>
-              </div>
-            </div>
-
-            <div data-netlify-recaptcha="true"></div>
-
-            <div className="field is-grouped">
-              <div className="control">
-                <button className="button is-rounded is-primary" type="submit">Envoyer</button>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-)
+      </section>
+    )
+  }
+}
 
 export default Contact

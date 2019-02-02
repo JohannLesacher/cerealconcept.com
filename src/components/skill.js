@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -11,7 +10,7 @@ const Skill = ({title, description, keywords, image}) => (
     </div>
     <div className="column is-7">
       <h2 className="title is-spaced is-2 to-reveal">{title}</h2>
-      <h4 className="subtitle is-5">{description} <small><Link to='#contact'>Contactez-nous</Link></small></h4>
+      <h4 className="subtitle is-5">{description} <small><button data-target="#contact-modal" className="is-link modal-button">Contactez-nous</button></small></h4>
       <div className="tags">
         {keywords ? keywords.map((keyword, i) => (
           <span className="tag to-reveal" key={i}>{keyword}</span>

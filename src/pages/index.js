@@ -14,7 +14,6 @@ if (typeof window !== `undefined`) {
 
 class IndexPage extends React.Component {
   componentDidMount() {
-    console.log('IndexPage componentDidMount')
     if (ScrollReveal !== undefined) {
       ScrollReveal().reveal('.to-reveal', {
         delay: 0,
@@ -45,8 +44,8 @@ class IndexPage extends React.Component {
         />
         <Landing />
         <Skills />
-        <About />
         <Contact />
+        <About />
       </Layout>
     )
   }
