@@ -14,6 +14,14 @@ class Form extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const form = document.querySelector('form[name="contact"]')
+
+    form.addEventListener('submit', (e) => {
+      this.props.handleSubmit(e, this.state)
+    })
+  }
+
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   reset() {
@@ -37,7 +45,7 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" data-netlify="true" onSubmit={this.props.handleSubmit}>
+      <form name="contact" data-netlify="true">
         <div className="columns is-centered">
           <div className="column is-5">
             <div className="field">
