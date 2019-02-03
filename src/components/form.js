@@ -97,7 +97,7 @@ class Form extends React.Component {
             </div>
 
             <div className="is-hidden" hidden aria-hidden="true">
-              <input type="text" name="position" value={value} onChange={this.handleChange} />
+              <input type="text" name="position" value={position} onChange={this.handleChange} />
             </div>
 
             <div className="field">
