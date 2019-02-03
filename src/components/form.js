@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import ReCAPTCHA from "react-google-recaptcha"
+
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 
 class Form extends React.Component {
   constructor() {
@@ -15,7 +18,7 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    const form = document.querySelector('form[name="contact-debug"]')
+    const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
       this.props.handleSubmit(e, this.state)
@@ -23,6 +26,8 @@ class Form extends React.Component {
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
+
+  handleRecaptcha = value => this.setState({ "g-recaptcha-response": value })
 
   reset() {
     this.setState({
@@ -45,11 +50,11 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact-debug" data-netlify="true">
+      <form name="contact" data-netlify="true" data-netlify-recaptcha="true">
         <div className="columns is-centered">
           <div className="column is-5">
 
-            <input type="hidden" name="form-name" value="contact-debug" />
+            <input type="hidden" name="form-name" value="contact" />
             
             <div className="field">
               <div className="control">
@@ -94,6 +99,13 @@ class Form extends React.Component {
                 J'accepte la <Link to="/">politique de confidentialité</Link>
               </label>
             </div>
+
+            <ReCAPTCHA
+              ref="recaptcha"
+              sitekey={RECAPTCHA_KEY}
+              onChange={this.handleRecaptcha}
+            />
+
             <div className="field">
               <div className="buttons is-right">
                 <button className="button is-rounded is-primary" type="submit">Envoyer</button>
