@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import Landing from '../components/landing'
 import Skills from '../components/skills'
 import About from '../components/about'
-import Contact from '../components/contact'
 import SEO from '../components/seo'
 
 let ScrollReveal = undefined
@@ -44,7 +43,6 @@ class IndexPage extends React.Component {
         />
         <Landing />
         <Skills />
-        <Contact />
         <About />
       </Layout>
     )

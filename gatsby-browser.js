@@ -66,7 +66,6 @@ exports.onRouteUpdate = function({ location }) {
 }
 
 exports.onInitialClientRender = () => {
-  console.log('onInitialClientRender')
   if (window !== undefined && document !== undefined) {
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
