@@ -6,7 +6,6 @@ class Form extends React.Component {
     super()
     this.state = {
       prenom_et_nom: "",
-      bot_field: "",
       email: "",
       telephone: "",
       entreprise_ou_organisation: "",
@@ -19,7 +18,8 @@ class Form extends React.Component {
     const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
-      this.props.handleSubmit(e, this.state)
+      const recaptcha = document.querySelector('form[name="contact"] [name="g-recaptcha-response"]')
+      this.props.handleSubmit(e, this.state, recaptcha.value)
     })
   }
 
@@ -28,7 +28,6 @@ class Form extends React.Component {
   reset() {
     this.setState({
       prenom_et_nom: "",
-      bot_field: "",
       email: "",
       telephone: "",
       entreprise_ou_organisation: "",
@@ -40,7 +39,6 @@ class Form extends React.Component {
   render() {
     const {
       prenom_et_nom,
-      bot_field,
       email,
       telephone,
       entreprise_ou_organisation,
@@ -48,13 +46,9 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" data-netlify="true" netlify-honeypot="bot_field">
+      <form name="contact" data-netlify="true">
         <div className="columns is-centered">
           <div className="column is-5">
-
-            <p class="hidden">
-              <label>Don’t fill this out if you're human: <input name="bot_field" value={bot_field} onChange={this.handleChange} /></label>
-            </p>
             
             <div className="field">
               <div className="control">
@@ -99,6 +93,8 @@ class Form extends React.Component {
                 J'accepte la <Link to="/">politique de confidentialité</Link>
               </label>
             </div>
+
+            <div data-netlify-recaptcha="true"></div>
 
             <div className="field">
               <div className="buttons is-right">
