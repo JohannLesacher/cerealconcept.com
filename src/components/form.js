@@ -13,7 +13,7 @@ class Form extends React.Component {
       entreprise_ou_organisation: "",
       politique_de_conf: "",
       message: "",
-      g-recaptcha-response: ""
+      'g-recaptcha-response': ""
     }
   }
 
@@ -37,7 +37,7 @@ class Form extends React.Component {
       entreprise_ou_organisation: "",
       politique_de_conf: "",
       message: "",
-      g-recaptcha-response: "",
+      'g-recaptcha-response': "",
     })
   }
 
