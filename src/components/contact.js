@@ -60,7 +60,7 @@ class Contact extends React.Component {
     fetch("/?no-cache=1", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact-debug", ...data })
+      body: encode({ "form-name": "contact", ...data })
     })
       .then(() => this.handleSuccess())
       .catch(error => alert(error))
