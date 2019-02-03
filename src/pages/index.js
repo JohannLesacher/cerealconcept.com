@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Landing from '../components/landing'
 import Skills from '../components/skills'
+import ContactCta from '../components/contactcta'
 import About from '../components/about'
 import SEO from '../components/seo'
 
@@ -43,6 +44,7 @@ class IndexPage extends React.Component {
         />
         <Landing />
         <Skills />
+        <ContactCta />
         <About />
       </Layout>
     )

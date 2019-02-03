@@ -51,9 +51,44 @@ class Contact extends React.Component {
     e.preventDefault()
   }
 
+  componentDidMount() {
+    if (document !== undefined) {
+
+      // Open Modal actions
+      const modalButtons = document.querySelectorAll('.modal-button')
+
+      modalButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          let target = button.dataset.target
+          let modal = document.querySelector(target)
+          let html = document.querySelector('html')
+          
+          modal.classList.add('is-active')
+          html.classList.add('is-clipped')
+        })
+      })
+
+      // Close Modal actions
+      const modalClose = document.querySelectorAll('.modal-close, .modal-background')
+
+      modalClose.forEach(function(close) {
+        close.addEventListener('click', function() {
+          let modals = document.querySelectorAll('.modal')
+          let html = document.querySelector('html')
+
+          modals.forEach(function(modal) {
+            modal.classList.remove('is-active')
+          })
+          html.classList.remove('is-clipped')
+        })
+      })
+
+    }
+  }
+
   render() {
     return (
-      <section className="section section-contact">
+      <section className="section-contact-form">
         <div className="notifications">
           {this.state.success &&
             <Message
@@ -63,14 +98,6 @@ class Contact extends React.Component {
                 />
           }
         </div>
-        <div className="has-text-centered">
-          <h4 className="title">Contact</h4>
-          <h2 className="subtitle">Ça vous semble intéressant ? Contactez-nous.</h2>
-
-          <button data-target="#contact-modal" className="button is-primary is-rounded is-medium modal-button">
-            Lancer la discussion
-          </button>
-        </div> 
         <div className="modal" id="contact-modal">
           <button className="modal-close is-large" aria-label="close"></button>
           <div className="modal-background"></div>
