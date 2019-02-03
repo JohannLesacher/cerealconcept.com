@@ -6,6 +6,7 @@ class Form extends React.Component {
     super()
     this.state = {
       prenom_et_nom: "",
+      bot-field: "",
       email: "",
       telephone: "",
       entreprise_ou_organisation: "",
@@ -27,6 +28,7 @@ class Form extends React.Component {
   reset() {
     this.setState({
       prenom_et_nom: "",
+      bot-field: "",
       email: "",
       telephone: "",
       entreprise_ou_organisation: "",
@@ -38,6 +40,7 @@ class Form extends React.Component {
   render() {
     const {
       prenom_et_nom,
+      bot-field,
       email,
       telephone,
       entreprise_ou_organisation,
@@ -45,11 +48,13 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" data-netlify="true" data-netlify-recaptcha="false">
+      <form name="contact" data-netlify="true" netlify-honeypot="bot-field">
         <div className="columns is-centered">
           <div className="column is-5">
 
-            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>Don’t fill this out if you're human: <input name="bot-field" value={bot-field} onChange={this.handleChange} /></label>
+            </p>
             
             <div className="field">
               <div className="control">
