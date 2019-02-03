@@ -15,7 +15,7 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    const form = document.querySelector('form[name="contact"]')
+    const form = document.querySelector('form[name="contact-debug"]')
 
     form.addEventListener('submit', (e) => {
       this.props.handleSubmit(e, this.state)
@@ -45,9 +45,12 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" data-netlify="true">
+      <form name="contact-debug" data-netlify="true">
         <div className="columns is-centered">
           <div className="column is-5">
+
+            <input type="hidden" name="form-name" value="contact-debug" />
+            
             <div className="field">
               <div className="control">
                 <label className="label is-placeholder" htmlFor="prenom_et_nom">Prénom & Nom</label>
