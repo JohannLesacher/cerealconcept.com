@@ -57,10 +57,10 @@ class Contact extends React.Component {
   }
 
   handleSubmit = (e, data, recaptcha) => {  
-    fetch("/?no-cache=1", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", "g-recaptcha-response": recaptcha, ...data })
+      body: encode({ "form-name": "contact", ...data })
     })
       .then(() => this.handleSuccess())
       .catch(error => alert(error))

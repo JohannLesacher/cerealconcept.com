@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 class Form extends React.Component {
   constructor() {
     super()
@@ -18,8 +20,7 @@ class Form extends React.Component {
     const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
-      const recaptcha = document.querySelector('form[name="contact"] [name="g-recaptcha-response"]')
-      this.props.handleSubmit(e, this.state, recaptcha.value)
+      this.props.handleSubmit(e, this.state)
     })
   }
 
@@ -46,7 +47,7 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" data-netlify="true">
+      <form name="contact" data-netlify="true" data-netlify-recaptcha="true">
         <div className="columns is-centered">
           <div className="column is-5">
             
@@ -94,7 +95,10 @@ class Form extends React.Component {
               </label>
             </div>
 
-            <div data-netlify-recaptcha="true"></div>
+            <ReCAPTCHA
+              sitekey="6Lerw44UAAAAAJ9ndTI3oej5-3SG7G-8jNn6HZoM"
+              onChange={this.handleChange}
+            />
 
             <div className="field">
               <div className="buttons is-right">
