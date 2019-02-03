@@ -37,7 +37,7 @@ class Form extends React.Component {
       message } = this.state
 
     return (
-      <form name="contact" onSubmit={this.props.handleSubmit}>
+      <form name="contact" netlify onSubmit={this.props.handleSubmit}>
         <div className="columns is-centered">
           <div className="column is-5">
             <div className="field">
