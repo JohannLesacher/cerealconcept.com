@@ -85,8 +85,6 @@ class Form extends React.Component {
               </div>
             </div>
 
-            <div data-netlify-recaptcha="true"></div>
-
             <div className="field">
               <label className="checkbox">
                 <input type="checkbox" value={politique_de_conf} onChange={this.handleChange} name="politique_de_conf" required />

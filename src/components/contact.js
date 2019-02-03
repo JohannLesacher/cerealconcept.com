@@ -57,6 +57,8 @@ class Contact extends React.Component {
   }
 
   handleSubmit = (e, data) => {
+    e.preventDefault()
+    
     fetch("/?no-cache=1", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
