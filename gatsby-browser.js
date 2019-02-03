@@ -63,7 +63,10 @@ exports.onRouteUpdate = function({ location }) {
       })
     })
   }
+}
 
+exports.onInitialClientRender = () => {
+  console.log('onInitialClientRender')
   if (window !== undefined && document !== undefined) {
     document.onreadystatechange = () => {
       if (document.readyState === 'complete') {
@@ -79,7 +82,7 @@ exports.onRouteUpdate = function({ location }) {
           main.style.minHeight = minMainHeight +"px"
         }
 
-        if (main.offsetHeight < window.innerHeight) {
+        if (main && main.offsetHeight < window.innerHeight) {
           applyMinMainHeight()
           window.onresize = debounce(applyMinMainHeight, 100)
         }
