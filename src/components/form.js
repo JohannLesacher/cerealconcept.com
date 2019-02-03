@@ -12,7 +12,8 @@ class Form extends React.Component {
       telephone: "",
       entreprise_ou_organisation: "",
       politique_de_conf: "",
-      message: ""
+      message: "",
+      g-recaptcha-response: ""
     }
   }
 
@@ -20,11 +21,13 @@ class Form extends React.Component {
     const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
+      console.log(document.querySelector('[name="g-recaptcha-response"]').value)
       this.props.handleSubmit(e, this.state)
     })
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
+  handleRecaptcha = e => this.setState({ "g-recaptcha-response": document.querySelector('[name="g-recaptcha-response"]').value })
 
   reset() {
     this.setState({
@@ -33,7 +36,8 @@ class Form extends React.Component {
       telephone: "",
       entreprise_ou_organisation: "",
       politique_de_conf: "",
-      message: ""
+      message: "",
+      g-recaptcha-response: "",
     })
   }
 
@@ -97,7 +101,7 @@ class Form extends React.Component {
 
             <ReCAPTCHA
               sitekey="6Lerw44UAAAAAJ9ndTI3oej5-3SG7G-8jNn6HZoM"
-              onChange={this.handleChange}
+              onChange={this.handleRecaptcha}
             />
 
             <div className="field">
