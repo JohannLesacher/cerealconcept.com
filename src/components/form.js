@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import ReCAPTCHA from "react-google-recaptcha";
-const recaptchaRef = React.createRef();
-
 class Form extends React.Component {
   constructor() {
     super()
@@ -13,7 +10,8 @@ class Form extends React.Component {
       telephone: "",
       entreprise_ou_organisation: "",
       politique_de_conf: "",
-      message: ""
+      message: "",
+      position: "",
     }
   }
 
@@ -21,8 +19,7 @@ class Form extends React.Component {
     const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
-      recaptchaRef.current.execute()
-      this.props.handleSubmit(e, this.state, recaptchaRef)
+      this.props.handleSubmit(e, this.state)
     })
   }
 
@@ -36,7 +33,7 @@ class Form extends React.Component {
       entreprise_ou_organisation: "",
       politique_de_conf: "",
       message: "",
-      'g-recaptcha-response': "",
+      position: "",
     })
   }
 
@@ -47,10 +44,11 @@ class Form extends React.Component {
       telephone,
       entreprise_ou_organisation,
       politique_de_conf,
-      message } = this.state
+      message,
+      position } = this.state
 
     return (
-      <form name="contact" data-netlify="true" data-netlify-recaptcha="true">
+      <form name="contact" data-netlify="true" netlify-honeypot="position">
         <div className="columns is-centered">
           <div className="column is-5">
             
@@ -98,11 +96,9 @@ class Form extends React.Component {
               </label>
             </div>
 
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              size="invisible"
-              sitekey="6Ld3w44UAAAAADDuUSZYE34lmBIgraIr6Sqsv_Tx"
-            />
+            <div className="is-hidden" hidden aria-hidden="true">
+              <input type="text" name="position" value={value} onChange={this.handleChange} />
+            </div>
 
             <div className="field">
               <div className="buttons is-right">

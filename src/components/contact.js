@@ -56,9 +56,8 @@ class Contact extends React.Component {
     this.setState({success: false})
   }
 
-  handleSubmit = (e, data, recaptchaRef) => {
-    const recaptchaValue = recaptchaRef.current.getValue()
-    fetch("/page-2?no-cache=1", {
+  handleSubmit = (e, data) => {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...data })
