@@ -20,31 +20,14 @@ class Contact extends React.Component {
     this.hideNotifications = this.hideNotifications.bind(this)
   }
 
-  componentDidMount() {
-    if (document !== undefined) {
-      const inputs = document.querySelectorAll('form[name="contact"] .input,form[name="contact"] .textarea')
-
-      inputs.forEach(function(input) {
-        let inputName = input.getAttribute('name')
-        let label = document.querySelector('form[name="contact"] .label[for='+inputName+']')
-
-        if (label) {
-          input.addEventListener('focus', function() {
-            label.classList.remove('is-placeholder')
-          })
-          input.addEventListener('focusout', function() {
-            if (input.value === '') {
-              label.classList.add('is-placeholder')
-            }
-          })
-        }
-      })
-    }
-  }
-
   handleSuccess() {
     this.setState({success: true})
     this.refs.contactform.reset()
+
+    // Hide modal
+    document.querySelector('#contact-modal').classList.remove('is-active')
+    document.querySelector('html').classList.remove('is-clipped')
+
     const hideNotifications = this.hideNotifications
 
     setTimeout(function() {
@@ -63,7 +46,7 @@ class Contact extends React.Component {
       body: encode({ "form-name": "contact", ...data })
     })
       .then(() => this.handleSuccess())
-      .catch(error => alert(error))
+      .catch(error => console.log(error))
 
     e.preventDefault()
   }

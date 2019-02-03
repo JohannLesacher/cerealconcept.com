@@ -16,11 +16,34 @@ class Form extends React.Component {
   }
 
   componentDidMount() {
-    const form = document.querySelector('form[name="contact"]')
+    if (document !== undefined) {
 
-    form.addEventListener('submit', (e) => {
-      this.props.handleSubmit(e, this.state)
-    })
+      // Submit Handler
+      const form = document.querySelector('form[name="contact"]')
+
+      form.addEventListener('submit', (e) => {
+        this.props.handleSubmit(e, this.state)
+      })
+
+      // Input placeholders
+      const inputs = document.querySelectorAll('form[name="contact"] .input,form[name="contact"] .textarea')
+
+      inputs.forEach(function(input) {
+        let inputName = input.getAttribute('name')
+        let label = document.querySelector('form[name="contact"] .label[for='+inputName+']')
+
+        if (label) {
+          input.addEventListener('focus', function() {
+            label.classList.remove('is-placeholder')
+          })
+          input.addEventListener('focusout', function() {
+            if (input.value === '') {
+              label.classList.add('is-placeholder')
+            }
+          })
+        }
+      })
+    }
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })

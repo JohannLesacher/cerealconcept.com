@@ -21,6 +21,16 @@ a:not(.button):not(.navbar-item) {
   }
 }
 
+.navbar {
+  background-color: transparent;
+
+  .navbar-brand {
+    .navbar-item {
+      max-width: 100%;
+    }
+  }
+}
+
 .section-title {
   font-weight: 300;
   margin: 2rem 0;
@@ -211,5 +221,51 @@ form[name="contact"] {
 
   input[type="checkbox"] {
     margin-right: 0.5rem;
+  }
+}
+
+.section-404 {
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    font-weight: 900;
+  }
+
+  .image-404 {
+    max-height: 90vh;
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+@include mobile {
+  .header.section {
+    padding: 1rem 1.5rem 3rem;
+
+    .navbar {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+
+      .navbar-menu,
+      .navbar-brand {
+        flex-grow: 1;
+        flex-shrink: 1;
+        justify-content: center;
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+@include touch {
+  .section-landing {
+    padding: 3rem 1.5rem 6rem;
   }
 }

@@ -4,7 +4,7 @@ import React from 'react'
 import Logo from '../svg/cerealconcept_horiz.svg'
 
 const Header = () => (
-  <header className="header section">
+  <header className="header section site-header">
     <div className="container">
       <nav className="navbar">
         <div className="navbar-brand">
