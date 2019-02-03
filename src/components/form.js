@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import ReCAPTCHA from "react-google-recaptcha";
+const recaptchaRef = React.createRef();
 
 class Form extends React.Component {
   constructor() {
@@ -20,12 +21,12 @@ class Form extends React.Component {
     const form = document.querySelector('form[name="contact"]')
 
     form.addEventListener('submit', (e) => {
-      this.props.handleSubmit(e, this.state)
+      recaptchaRef.current.execute()
+      this.props.handleSubmit(e, this.state, recaptchaRef)
     })
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
-  handleRecaptcha = value => this.setState({ "g-recaptcha-response": value })
 
   reset() {
     this.setState({
@@ -98,9 +99,9 @@ class Form extends React.Component {
             </div>
 
             <ReCAPTCHA
-              ref="recaptcha"
-              sitekey="6Lerw44UAAAAAJ9ndTI3oej5-3SG7G-8jNn6HZoM"
-              onChange={this.handleRecaptcha}
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey="6Ld3w44UAAAAADDuUSZYE34lmBIgraIr6Sqsv_Tx"
             />
 
             <div className="field">
