@@ -23,6 +23,8 @@ class Form extends React.Component {
     form.addEventListener('submit', (e) => {
       this.props.handleSubmit(e, this.state)
     })
+
+    console.log(RECAPTCHA_KEY)
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
