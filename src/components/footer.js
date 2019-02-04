@@ -6,9 +6,9 @@ const Footer = () => (
     <Contact />
     <footer className="section section-footer has-background-dark has-text-white site-footer">
       <div className="container">
-        <div className="column"><h4>Nous contacter</h4>
-          <div className="contact"><p>Johann Lesacher, web alchimiste<br/><a href="mailto:j.lesacher@cerealconcept.com">j.lesacher@cerealconcept.com</a> - +33 6 71 541 553</p></div>
-          <div className="contact"><p>Adrien Pierrin, webdesign et e-marketing<br/><a href="mailto:a.pierrin@cerealconcept.com">a.pierrin@cerealconcept.com</a> - +33 6 58 477 849</p></div>
+        <div className="columnt">
+          <h4 className="title is-2">Nous contacter</h4>
+          <div className="contact"><p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.<br/>Suivez notre actualité sur nos <a href="https://www.facebook.com/cerealconcept/" target="_blank">réseaux sociaux</a>.</p></div>
         </div>
         <div className="column"><ul><li>Mentions légales</li><li>Politique de confidentialité</li></ul></div>
       </div>
