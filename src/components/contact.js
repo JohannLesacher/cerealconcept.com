@@ -53,6 +53,8 @@ class Contact extends React.Component {
 
   componentDidMount() {
     if (document !== undefined) {
+      // Remove is-clipped au cas où
+      document.querySelector('html').classList.remove('is-clipped')
 
       // Open Modal actions
       const modalButtons = document.querySelectorAll('.modal-button')

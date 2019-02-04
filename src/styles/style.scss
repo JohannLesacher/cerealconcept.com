@@ -31,6 +31,17 @@ a:not(.button):not(.navbar-item) {
   }
 }
 
+.content {
+  .title {
+    &.is-1,
+    &.is-2,
+    &.is-3,
+    &.is-4 {
+      font-weight: 900;
+    }
+  }
+}
+
 .section-title {
   font-weight: 300;
   margin: 2rem 0;
@@ -132,17 +143,17 @@ a:not(.button):not(.navbar-item) {
   
   .modal-background {
     background-color: $primary-lightest;
-    transition: all 172ms ease;
+    transition: all 300ms ease;
 
     &:hover {
       background-color: rgba(214, 214, 214, 0.85);
-      transition: all 172ms ease;
+      transition: all 300ms ease;
     }
   }
 
   .modal-close:hover + .modal-background {
     background-color: rgba(214, 214, 214, 0.85);
-    transition: all 172ms ease;
+    transition: all 300ms ease;
   }
 }
 

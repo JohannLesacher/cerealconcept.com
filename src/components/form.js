@@ -115,7 +115,7 @@ class Form extends React.Component {
             <div className="field">
               <label className="checkbox">
                 <input type="checkbox" value={politique_de_conf} onChange={this.handleChange} name="politique_de_conf" required />
-                J'accepte la <Link to="/">politique de confidentialité</Link>
+                J'accepte la <a href="/politique-de-confidentialite" target="_blank">politique de confidentialité</a>
               </label>
             </div>
 
