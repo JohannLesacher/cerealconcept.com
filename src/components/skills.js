@@ -25,29 +25,29 @@ const Skills = () => (
         <Skill
           title="Création de boutiques e-commerce"
           description="Vous désirez lancer votre affaire en ligne, vendre votre marque et vos produits sur internet ? Notre équipe vous accompagne de votre stratégie e-marketing au déploiement de votre plateforme e-commerce fiable, intuitive et sécurisée."
-          keywords={['e-shop', 'e-transactions', 'contrat TPE', 'contrat VAD', 'TVA intracommunautaire', 'transporteurs', 'PayPal', 'Stripe', 'Cyberplus', 'Monetico Paiement', 'Sherlock’s', 'Colissimo', 'UPS', 'Sendcloud', 'transnational']}
+          keywords={['e-shop', 'e-transactions', 'TPE', 'VAD', 'worldwide', 'PayPal', 'Stripe', 'Cyberplus', 'Monetico Paiement', 'Sherlock’s', 'Colissimo', 'UPS', 'Sendcloud']}
           image={<ImageEcommerce/>}
         />
         <Skill
           title="Développement de fonctionnalités sur mesure"
           description="Vous souhaitez étendre les fonctionnalités de votre site, améliorer votre espace d’administration, faciliter votre gestion et votre communication en interne ou encore dialoguer avec une API ? Nous pouvons réaliser des outils sur-mesure, élégants et flexibles."
-          keywords={['extensions', 'modules', 'back-office', 'fonctionnalités']}
+          keywords={['plugins','extensions', 'modules', 'back-office', 'fonctionnalités', 'API', 'applications']}
           image={<ImagePlugins/>}
         />
         <Skill
           title="Renforcement de votre référencement"
           description="Vous désirez stimuler votre visibilité sur la toile, concurrencer les entreprises en tête des résultats de recherche google dans votre secteur d’activité ? Nous ciblons et travaillons sur les points faibles de votre interface avec une campagne de référencement naturel (SEO) optimale et aboutie."
-          keywords={['maillage', 'referencement naturel', 'optimisation', 'metadonnées']}image={<ImageSeo/>}
+          keywords={['netlinking', 'contenu', 'maillage', 'mots-clés', 'referencement naturel', 'optimisation', 'metadonnées', 'backlinks', 'blog']}image={<ImageSeo/>}
         />
         <Skill
           title="Sécurisation et maintenance technique"
           description="Vous voulez mettre à jour votre site web, nettoyer et sécuriser votre plateforme d’un problème technique ou d’un virus ? Nous identifions les failles de sécurité et vous proposons un ensemble d’interventions ciblées, pouvant aboutir à un suivi régulier selon la nature du problème."
-          keywords={['audit', 'dépannage', 'nettoyage', 'sécurisation', 'surveillance']}image={<ImageSecurite/>}
+          keywords={['debug','audit', 'dépannage', 'nettoyage', 'sécurisation', 'surveillance']}image={<ImageSecurite/>}
         />
         <Skill
           title="Conseil, expertise technique et formations"
           description="Vous voulez vous re positionner sur la toile ? sur votre image sur internet ? sur Vous utilisez WordPress mais aimeriez étendre vos compétences ? Après 7 ans à travailler avec, nous pouvons sûrement répondre à vos questions."
-          keywords={['questions', 'réponses']}
+          keywords={['accompagnement', 'benchmark', 'communication', 'questions', 'réponses']}
           image={<ImageFormations/>}
         />
       </div>
