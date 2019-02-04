@@ -19,12 +19,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Cereal Concept - Création de site web sur mesure.`,
-        short_name: `Cereal Concept`,
+        short_name: `CerealConcept`,
         start_url: `/`,
         background_color: `#44c2de`,
         theme_color: `#44c2de`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/cerealconcept-icon.png`, // This path is relative to the root of the site.
       },
     },
     {

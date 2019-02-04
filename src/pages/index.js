@@ -21,7 +21,7 @@ class IndexPage extends React.Component {
         origin: 'left',
         duration: 500,
         interval: 10,
-        cleanup: true
+        cleanup: true,
       })
 
       ScrollReveal().reveal('.reveal-spotlight', {
@@ -29,7 +29,8 @@ class IndexPage extends React.Component {
         opacity: 0.1,
         viewFactor: 0.8,
         duration: 250,
-        cleanup: true
+        cleanup: true,
+        mobile: false,
       });
     }
   }
