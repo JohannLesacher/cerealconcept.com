@@ -26,7 +26,7 @@ const Adrien = ({className}) => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} className={className} />}
+    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} className={className} alt="Adrien Pierrin - Expert SEO & E-Commerce" />}
   />
 )
 export default Adrien

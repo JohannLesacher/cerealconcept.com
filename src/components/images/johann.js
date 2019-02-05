@@ -26,7 +26,7 @@ const Johann = ({className}) => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} className={className} />}
+    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} className={className} alt="Johann Lesacher - Développeur Web Full Stack" />}
   />
 )
 export default Johann

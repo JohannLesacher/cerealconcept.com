@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Skill from './skill'
-import ImageFormations from '../svg/skill_formations.svg';
-import ImageSecurite from '../svg/skill_securite.svg';
-import ImageSeo from '../svg/skill_seo.svg';
-import ImageThemes from '../svg/skill_themes.svg';
-import ImagePlugins from '../svg/skill_plugins.svg';
-import ImageEcommerce from '../svg/skill_ecommerce.svg';
+import ImageFormations from '../svg/skill_formations.svg'
+import ImageSecurite from '../svg/skill_securite.svg'
+import ImageSeo from '../svg/skill_seo.svg'
+import ImageThemes from '../svg/skill_themes.svg'
+import ImagePlugins from '../svg/skill_plugins.svg'
+import ImageEcommerce from '../svg/skill_ecommerce.svg'
 
 const Skills = () => (
   <section className="section section-skills">

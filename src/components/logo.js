@@ -43,7 +43,7 @@ const Logo = () => (
         }
       }
     `}
-    render={data => <NonStretchedImage fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <NonStretchedImage fluid={data.placeholderImage.childImageSharp.fluid} alt="Cereal Concept - Création de Site Web sur Toulouse"/>}
   />
 )
 export default Logo

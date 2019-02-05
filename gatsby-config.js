@@ -23,7 +23,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#44c2de`,
         theme_color: `#44c2de`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/cerealconcept-icon.png`, // This path is relative to the root of the site.
       },
     },

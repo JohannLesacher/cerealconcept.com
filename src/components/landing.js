@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Image from '../svg/landing_main2.svg'
+import Image from '../svg/landing_main.svg'
 
 const Landing = () => (
   <section className="section section-landing">
