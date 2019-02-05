@@ -13,20 +13,37 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
+const NonStretchedImage = props => {
+  let normalizedProps = props
+  if (props.fluid && props.fluid.presentationWidth) {
+    normalizedProps = {
+      ...props,
+      style: {
+        ...(props.style || {}),
+        maxWidth: props.fluid.presentationWidth,
+        margin: "0 auto", // Used to center the image
+      },
+    }
+  }
+
+  return <Img {...normalizedProps} />
+}
+
 const Logo = () => (
   <StaticQuery
     query={graphql`
       query {
         placeholderImage: file(relativePath: { eq: "cerealconcept.png" }) {
           childImageSharp {
-            fluid(maxWidth: 600) {
+            fluid(maxWidth: 450, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              presentationWidth
             }
           }
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => <NonStretchedImage fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
 export default Logo

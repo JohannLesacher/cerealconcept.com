@@ -11,16 +11,11 @@ const Footer = () => (
           <div className="column">
             <h4 className="title has-text-white is-4">Cereal Concept</h4>
           </div>
-          <div className="column">
-            <h3 className="title is-3">Johann Lesacher</h3>
-            <h4 className="subtitle is-5">Développeur Web Full Stack</h4>
-            <a href="mailto:j.lesacher@cerealconcept.com">j.lesacher@cerealconcept.com</a><br/>
-            <a href="tel:+33671541553">+33 671 541 553</a>
-          </div>
-          <div className="column">
-            <p>Adrien Pierrin, Web et Communication<br/>
-            <a href="mailto:a.pierrin@cerealconcept.com">a.pierrin@cerealconcept.com</a><br/>
-            <a href="tel:+33658477849">+33 658 477 849</a></p>
+          <div className="column has-text-white">
+            <h4 className="title is-4">Nous contacter</h4>
+            <div className="contact">
+              <p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.<br/>Suivez notre actualité sur nos <a href="https://www.facebook.com/cerealconcept/" target="_blank">réseaux sociaux</a>.</p>
+            </div>
           </div>
           <div className="column">
             <ul>
