@@ -4,7 +4,7 @@ import React from 'react'
 import './skill.scss'
 
 const Skill = ({title, description, keywords, image}) => (
-  <div className="columns skill is-vcentered is-variable is-8 reveal-spotlight">
+  <div className="columns skill is-vcentered reveal-spotlight">
     <div className="column is-5">
       {image}
     </div>

@@ -229,17 +229,17 @@ form[name="contact"] {
 
   .label {
     position: absolute;
-    transition: all 172ms ease-out;
+    transition: transform 172ms ease-out;
+    transform: translateX(0) translateY(0) translateZ(0);
     left: 0;
     top: 0;
     z-index: 0;
 
     &.is-placeholder {
       position: absolute;
-      top: 1.5rem;
-      left: 0.5rem;
+      transform: translateX(0.5rem) translateY(1.5rem) translateZ(0);
       color: grey;
-      transition: all 172ms ease-out;
+      transition: transform 172ms ease-out;
     }
   }
 
