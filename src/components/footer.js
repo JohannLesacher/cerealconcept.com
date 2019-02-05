@@ -14,12 +14,12 @@ const Footer = () => (
           <div className="column has-text-white">
             <h4 className="title is-4">Nous contacter</h4>
             <div className="contact">
-              <p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.<br/>Suivez notre actualité sur nos <a href="https://www.facebook.com/cerealconcept/" target="_blank">réseaux sociaux</a>.</p>
+              <p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.<br/>Suivez notre actualité sur nos <a href="https://www.facebook.com/cerealconcept/" target="_blank" rel="noopener noreferrer">réseaux sociaux</a>.</p>
             </div>
           </div>
           <div className="column">
             <ul>
-              <li><Link to="/">Mentions légales</Link></li>
+              <li><Link to="/mentions-legales">Mentions légales</Link></li>
               <li><Link to="/politique-de-confidentialite">Politique de confidentialité</Link></li>
             </ul>
           </div>
