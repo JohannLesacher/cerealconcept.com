@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 class Form extends React.Component {
   constructor() {
@@ -15,40 +14,64 @@ class Form extends React.Component {
     }
   }
 
+  eventListenerInputFocus = (label, e) => {
+    // console.log('eventListenerInputFocus')
+    label.classList.remove('is-placeholder')
+  }
+
+  eventListenerInputFocusOut = (input, label, e) => {
+    // console.log('eventListenerInputFocusOut')
+    if (input.value === '') {
+      label.classList.add('is-placeholder')
+    }
+  }
+
+  eventListenerSubmit = ['submit', (e) => {
+    // console.log('eventListenerSubmit')
+    this.props.handleSubmit(e, this.state)
+  }]
+
   componentDidMount() {
     if (document !== undefined) {
 
       // Submit Handler
       const form = document.querySelector('form[name="contact"]')
 
-      form.addEventListener('submit', (e) => {
-        this.props.handleSubmit(e, this.state)
-      })
+      form.addEventListener(...this.eventListenerSubmit)
 
       // Input placeholders
       const inputs = document.querySelectorAll('form[name="contact"] .input,form[name="contact"] .textarea')
+      const context = this
 
       inputs.forEach(function(input) {
         let inputName = input.getAttribute('name')
         let label = document.querySelector('form[name="contact"] .label[for='+inputName+']')
 
         if (label) {
-          input.addEventListener('focus', function() {
-            label.classList.remove('is-placeholder')
-          })
-          input.addEventListener('focusout', function() {
-            if (input.value === '') {
-              label.classList.add('is-placeholder')
-            }
-          })
+          input.addEventListener('focus', context.eventListenerInputFocus.bind(this, label))
+          input.addEventListener('focusout', context.eventListenerInputFocusOut.bind(this, input, label))
         }
       })
     }
   }
 
+  componentWillUnmount() {
+    const form = document.querySelector('form[name="contact"]')
+    form.removeEventListener(...this.eventListenerSubmit)
+
+    const inputs = document.querySelectorAll('form[name="contact"] .input,form[name="contact"] .textarea')
+    const context = this
+
+    inputs.forEach(function(input) {
+      input.removeEventListener('focus', context.eventListenerInputFocus)
+      input.removeEventListener('focusout', context.eventListenerInputFocusOut)
+    })
+  }
+
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
   reset() {
+    // console.log('reset')
     this.setState({
       prenom_et_nom: "",
       email: "",
