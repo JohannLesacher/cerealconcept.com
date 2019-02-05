@@ -2,6 +2,8 @@ import React from 'react'
 import Contact from './contact'
 import { Link } from 'gatsby'
 
+import Facebook from './images/facebook'
+
 const Footer = () => (
   <>
     <Contact />
@@ -12,9 +14,12 @@ const Footer = () => (
             <h4 className="title has-text-white is-4">Cereal Concept</h4>
           </div>
           <div className="column has-text-white">
-            <h4 className="title is-4">Nous contacter</h4>
+            <h4 className="title is-4 has-text-white">Nous contacter</h4>
             <div className="contact">
-              <p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.<br/>Suivez notre actualité sur nos <a href="https://www.facebook.com/cerealconcept/" target="_blank" rel="noopener noreferrer">réseaux sociaux</a>.</p>
+              <p>Vous pouvez nous écrire à <a href="mailto:contact@cerealconcept.com">contact@cerealconcept.com</a> ou nous appeler au +33 6 71 541 553 / +33 6 58 477 849.</p>
+              <a href="https://www.facebook.com/cerealconcept/" rel="noopener noreferrer" target="_blank">
+                <Facebook/>
+              </a>
             </div>
           </div>
           <div className="column">
