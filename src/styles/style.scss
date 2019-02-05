@@ -241,6 +241,16 @@ form[name="contact"] {
   }
 }
 
+.section-footer {
+  a {
+    color: $primary-lightest;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 .section-404 {
   min-height: inherit;
   display: flex;
