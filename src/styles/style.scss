@@ -350,6 +350,12 @@ form[name="contact"] {
 
       .navbar-brand {
         flex-shrink: 1;
+
+        svg {
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -357,6 +363,12 @@ form[name="contact"] {
   .section-landing {
     .title {
       margin-bottom: 2rem;
+    }
+  }
+
+  .section-about {
+    .team {
+      word-break: break-all;
     }
   }
 
