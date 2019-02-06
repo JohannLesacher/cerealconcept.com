@@ -343,19 +343,20 @@ form[name="contact"] {
 
 @include mobile {
   .header.section {
-    padding: 1rem 1.5rem 3rem;
+    padding: 1rem 1.5rem 2rem;
 
     .navbar {
-      flex-wrap: wrap;
-      flex-direction: column-reverse;
+      flex-direction: row;
 
-      .navbar-menu,
       .navbar-brand {
-        flex-grow: 1;
         flex-shrink: 1;
-        justify-content: center;
-        flex-basis: 100%;
       }
+    }
+  }
+
+  .section-landing {
+    .title {
+      margin-bottom: 2rem;
     }
   }
 

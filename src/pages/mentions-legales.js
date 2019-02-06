@@ -22,11 +22,11 @@ const MentionsLegales = () => (
 
               <h4 className="title is-4">Siège social</h4>
               <p><strong>Johann Lesacher</strong><br/>
-              46 boulevard des Minimes, 31200, Toulouse, France<br/>
-              SIRET: 75350308500049</p>
+              46 boulevard des Minimes, 31200 Toulouse, France<br/>
+              SIRET: 753 503 085 00049</p>
               <p><strong>Adrien Pierrin</strong><br/>
-              46 boulevard des Minimes, 31200, Toulouse, France<br/>
-              SIRET: 75350308500049</p>
+              15 rue des Pâquerettes, 31500 Toulouse, France<br/>
+              SIRET: 788 957 405 00038</p>
 
               <h3 className="title is-3">Hébergement :</h3>
               <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>
