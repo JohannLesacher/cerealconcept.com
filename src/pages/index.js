@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
         <SEO
           title="Création de Site Web à Toulouse"
           description="Artisans du web spécialistes WordPress nous développons des sites web sur-mesure pour des clients dans le monde entier."
-          keywords={[`gatsby`, `application`, `react`]}
+          keywords={[`wordpress`, `e-commerce`, `référencement`, `toulouse`]}
         />
         <Landing />
         <Skills />

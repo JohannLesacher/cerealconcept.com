@@ -2,6 +2,8 @@ import React from 'react'
 import Contact from './contact'
 import { Link } from 'gatsby'
 
+import Facebook from '../components/images/facebook'
+
 const Footer = () => (
   <>
     <Contact />
