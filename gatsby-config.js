@@ -7,6 +7,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-10410230-3",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -23,7 +29,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#44c2de`,
         theme_color: `#44c2de`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/cerealconcept-icon.png`, // This path is relative to the root of the site.
       },
     },

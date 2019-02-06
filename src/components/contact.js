@@ -51,38 +51,61 @@ class Contact extends React.Component {
     e.preventDefault()
   }
 
+  eventListenerOpen = (button, e) => {
+    let target = button.dataset.target
+    let modal = document.querySelector(target)
+    let html = document.querySelector('html')
+    
+    modal.classList.add('is-active')
+    html.classList.add('is-clipped')
+  }
+
+  eventListenerClose = ['click', () => {
+    let modals = document.querySelectorAll('.modal')
+    let html = document.querySelector('html')
+
+    modals.forEach(function(modal) {
+      modal.classList.remove('is-active')
+    })
+    html.classList.remove('is-clipped')
+  }]
+
   componentDidMount() {
     if (document !== undefined) {
       // Remove is-clipped au cas où
       document.querySelector('html').classList.remove('is-clipped')
+      const context = this
 
       // Open Modal actions
       const modalButtons = document.querySelectorAll('.modal-button')
 
       modalButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-          let target = button.dataset.target
-          let modal = document.querySelector(target)
-          let html = document.querySelector('html')
-          
-          modal.classList.add('is-active')
-          html.classList.add('is-clipped')
-        })
+        button.addEventListener('click', context.eventListenerOpen.bind(this, button))
       })
 
       // Close Modal actions
       const modalClose = document.querySelectorAll('.modal-close, .modal-background')
 
       modalClose.forEach(function(close) {
-        close.addEventListener('click', function() {
-          let modals = document.querySelectorAll('.modal')
-          let html = document.querySelector('html')
+        close.addEventListener(...context.eventListenerClose)
+      })
 
-          modals.forEach(function(modal) {
-            modal.classList.remove('is-active')
-          })
-          html.classList.remove('is-clipped')
-        })
+    }
+  }
+
+  componentWillUnmount() {
+    if (document !== undefined) {
+      const context = this
+      // Open Modal actions
+      const modalButtons = document.querySelectorAll('.modal-button')
+      modalButtons.forEach(function(button) {
+        button.removeEventListener(...context.eventListenerOpen)
+      })
+
+      // Close Modal actions
+      const modalClose = document.querySelectorAll('.modal-close, .modal-background')
+      modalClose.forEach(function(close) {
+        close.removeEventListener(...context.eventListenerClose)
       })
 
     }

@@ -6,7 +6,6 @@
 
 // You can delete this file if you're not using it
 exports.onClientEntry = () => {
-  console.log('onClientEntry')
   // IntersectionObserver polyfill for gatsby-image (Safari, IE)
   if (typeof window.IntersectionObserver === `undefined`) {
     import(`intersection-observer`)
