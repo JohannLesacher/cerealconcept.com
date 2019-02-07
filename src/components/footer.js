@@ -2,11 +2,7 @@ import React from 'react'
 import Contact from './contact'
 import { Link } from 'gatsby'
 
-<<<<<<< HEAD
-import Facebook from '../components/images/facebook'
-=======
 import Facebook from '../svg/facebook.svg'
->>>>>>> 6266f9bc2b2338f04e9aab4ea37094fdae18a424
 
 const Footer = () => (
   <>
