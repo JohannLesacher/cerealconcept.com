@@ -43,6 +43,13 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contenu`,
+        path: `${__dirname}/src/data`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,

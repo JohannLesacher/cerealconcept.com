@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
-
+  branch: netlify-cms
+  
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: img
 
@@ -10,7 +12,7 @@ collections:
     files:
       - label: Accueil
         name: accueil
-        file: "src/pages/accueil/accueil.md"
+        file: "src/data/pages/speciales/accueil.md"
         fields: 
           - { label: "Titre", name: "titre", widget: "string" }
           - {
@@ -115,7 +117,7 @@ collections:
             }
   - name: pages_simples
     label: "Pages Simples"
-    folder: src/pages/simples
+    folder: src/data/pages/simples
     identifier_field: url
     create: true
     fields:
