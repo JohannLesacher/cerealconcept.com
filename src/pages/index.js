@@ -34,12 +34,10 @@ export default class IndexPage extends React.Component {
         mobile: false,
       });
     }
-
-    // Data
-    console.log(this.props.data)
   }
 
   render() {
+    const { landing } = this.props.data.markdown.contenu
     return (
       <Layout>
         <SEO
@@ -47,7 +45,7 @@ export default class IndexPage extends React.Component {
           description="Artisans du web spécialistes WordPress nous développons des sites web sur-mesure pour des clients dans le monde entier."
           keywords={[`wordpress`, `e-commerce`, `référencement`, `toulouse`]}
         />
-        <Landing />
+        <Landing data={landing} />
         <Skills />
         <ContactCta />
         <About />
@@ -58,9 +56,17 @@ export default class IndexPage extends React.Component {
 
 export const IndexPageQuery = graphql`
   query IndexPageQuery {
-    markdownRemark(fileAbsolutePath: {regex: "/accueil/"}) {
-      frontmatter {
+    markdown: markdownRemark(fileAbsolutePath: {regex: "/accueil/"}) {
+      contenu: frontmatter {
         titre
+        landing {
+          image: landingImage
+          titre: landingTitre
+          bouton: landingBouton {
+            lien: landingBoutonLien
+            texte: landingBoutonTexte
+          }
+        }
       }
     }
   }
