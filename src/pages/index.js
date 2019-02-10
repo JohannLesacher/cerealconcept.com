@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Landing from '../components/landing'
@@ -12,7 +13,7 @@ if (typeof window !== `undefined`) {
   ScrollReveal = require("scrollreveal").default
 }
 
-class IndexPage extends React.Component {
+export default class IndexPage extends React.Component {
   componentDidMount() {
     if (ScrollReveal !== undefined) {
       ScrollReveal().reveal('.to-reveal', {
@@ -33,6 +34,9 @@ class IndexPage extends React.Component {
         mobile: false,
       });
     }
+
+    // Data
+    console.log(this.props.data)
   }
 
   render() {
@@ -52,4 +56,12 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage
+export const IndexPageQuery = graphql`
+  query IndexPageQuery {
+    markdownRemark(fileAbsolutePath: {regex: "/accueil/"}) {
+      frontmatter {
+        titre
+      }
+    }
+  }
+`
