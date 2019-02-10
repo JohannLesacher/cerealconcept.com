@@ -42,6 +42,8 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
