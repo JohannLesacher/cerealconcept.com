@@ -38,20 +38,22 @@ exports.createPages = ({ actions, graphql }) => {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
+    
+    if (result.data) {
+      const pages_simples = result.data.allFile.edges
 
-    const pages_simples = result.data.allFile.edges
-
-    pages_simples.forEach(edge => {
-      createPage({
-        path: edge.node.childMarkdownRemark.frontmatter.url,
-        component: path.resolve(
-          `src/components/templates/page-simple.js`
-        ),
-        context: {
-          slug: edge.node.childMarkdownRemark.fields.slug,
-        },
+      pages_simples.forEach(edge => {
+        createPage({
+          path: edge.node.childMarkdownRemark.frontmatter.url,
+          component: path.resolve(
+            `src/components/templates/page-simple.js`
+          ),
+          context: {
+            slug: edge.node.childMarkdownRemark.fields.slug,
+          },
+        })
       })
-    })
+    }
   })
 }
 
