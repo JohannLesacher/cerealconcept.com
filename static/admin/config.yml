@@ -125,5 +125,5 @@ collections:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Sous-Titre", name: "sousTitre", widget: "text" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Contenu", name: "contenu", widget: "markdown" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
 

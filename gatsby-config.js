@@ -83,8 +83,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `contenu`,
-        path: `${__dirname}/src/data`,
+        name: `pages_simples`,
+        path: `${__dirname}/src/data/pages/simples`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages_speciales`,
+        path: `${__dirname}/src/data/pages/speciales`,
       },
     },
     `gatsby-plugin-offline`,
