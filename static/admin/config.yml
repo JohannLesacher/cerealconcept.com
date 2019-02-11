@@ -118,7 +118,7 @@ collections:
   - name: pages_simples
     label: "Pages Simples"
     folder: src/data/pages/simples
-    identifier_field: url
+    identifier_field: titre
     create: true
     fields:
       - { label: "Url", name: "url", widget: "string" }
