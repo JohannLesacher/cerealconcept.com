@@ -2,7 +2,6 @@
 titre: Création de Site Web à Toulouse
 landing:
   landingBouton:
-    landingBoutonLien: '#contact'
     landingBoutonTexte: Discutons de vos projets
   landingImage: /img/landing_main.svg
   landingTitre: >-
