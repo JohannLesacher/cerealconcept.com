@@ -83,14 +83,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages_simples`,
+        name: `pages-simples`,
         path: `${__dirname}/src/data/pages/simples`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages_speciales`,
+        name: `pages-speciales`,
         path: `${__dirname}/src/data/pages/speciales`,
       },
     },

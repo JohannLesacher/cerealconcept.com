@@ -16,7 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
       allFile(
         filter: {
           internal: {mediaType: {eq: "text/markdown"}},
-          sourceInstanceName: {eq: "pages_simples"}
+          sourceInstanceName: {eq: "pages-simples"}
         }
       ){
         edges {
@@ -40,9 +40,9 @@ exports.createPages = ({ actions, graphql }) => {
     }
     
     if (result.data) {
-      const pages_simples = result.data.allFile.edges
+      const pagesSimples = result.data.allFile.edges
 
-      pages_simples.forEach(edge => {
+      pagesSimples.forEach(edge => {
         createPage({
           path: edge.node.childMarkdownRemark.frontmatter.url,
           component: path.resolve(
