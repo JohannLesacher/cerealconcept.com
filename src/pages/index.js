@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const { landing } = this.props.data.markdown.contenu
+    const { landing, services, contact, aPropos } = this.props.data.markdown.contenu
     return (
       <Layout>
         <SEO
@@ -46,9 +46,9 @@ export default class IndexPage extends React.Component {
           keywords={[`wordpress`, `e-commerce`, `référencement`, `toulouse`]}
         />
         <Landing data={landing} />
-        <Skills />
-        <ContactCta />
-        <About />
+        <Skills data={services} />
+        <ContactCta data={contact} />
+        <About data={aPropos} />
       </Layout>
     )
   }
@@ -62,7 +62,7 @@ export const IndexPageQuery = graphql`
         landing {
           image: landingImage {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 95) {
+              fluid(maxWidth: 1200, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
                 presentationWidth
               }
@@ -74,6 +74,63 @@ export const IndexPageQuery = graphql`
           bouton: landingBouton {
             lien: landingBoutonLien
             texte: landingBoutonTexte
+          }
+        }
+        services {
+          serviceSurTitre
+          serviceTitre
+          serviceBlock {
+            serviceBlockImage {
+              childImageSharp {
+                fluid(maxWidth: 450, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  presentationWidth
+                }
+              }
+              relativePath
+              extension
+            }
+            serviceBlockTitre
+            serviceBlockTexte
+            serviceBlockTags
+          }
+        }
+        contact {
+          contactTitre
+          contactSousTitre
+          contactBouton {
+            contactBoutonLien
+            contactBoutonTexte
+          }
+        }
+        aPropos {
+          aProposImage {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                presentationWidth
+              }
+            }
+            relativePath
+            extension
+          }
+          aProposContenu
+          aProposTitre
+          aProposEquipe {
+            aProposEquipePhoto {
+              childImageSharp {
+                fluid(maxWidth: 500, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  presentationWidth
+                }
+              }
+              relativePath
+              extension
+            }
+            aProposEquipeEmail
+            aProposEquipeNom
+            aProposEquipePoste
+            aProposEquipeTelephone
           }
         }
       }
