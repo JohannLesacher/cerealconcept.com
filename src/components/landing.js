@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Image from '../svg/landing_main.svg'
+import ImageHandler from './imageHandler'
 import remark from 'remark'
 import remarkHTML from 'remark-html'
 
@@ -20,7 +20,7 @@ const Landing = ({ data }) => {
             </div>
           </div>
           <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-0-desktop is-5-widescreen">
-            <Image />
+            <ImageHandler image={data.image} alt='Test alt' />
           </div>
         </div>
       </div>

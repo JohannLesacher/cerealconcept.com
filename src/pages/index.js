@@ -60,7 +60,16 @@ export const IndexPageQuery = graphql`
       contenu: frontmatter {
         titre
         landing {
-          image: landingImage
+          image: landingImage {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 95) {
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
+              }
+            }
+            relativePath
+            extension
+          }
           titre: landingTitre
           bouton: landingBouton {
             lien: landingBoutonLien
