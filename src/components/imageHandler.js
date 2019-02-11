@@ -11,7 +11,7 @@ const ImageHandler = ({ image, alt }) => {
     )
   } else if (typeof image.relativePath === 'string' && image.extension === 'svg') {
     // SVG
-    const Image = require('../data/media/' + image.relativePath)
+    const Image = require('../../static/img/' + image.relativePath)
     return (
       <Image />
     )
