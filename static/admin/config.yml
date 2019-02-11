@@ -1,0 +1,128 @@
+backend:
+  name: git-gateway
+  branch: netlify-cms
+  
+media_folder: src/data/media
+public_folder: /img
+
+collections:
+  - name: pages_speciales
+    label: Pages Spéciales
+    files:
+      - label: Accueil
+        name: accueil
+        file: "src/data/pages/speciales/accueil.md"
+        fields: 
+          - { label: "Titre", name: "titre", widget: "string" }
+          - {
+              label: "Landing",
+              name: "landing",
+              widget: "object",
+              fields:
+                [
+                  { label: "Titre", name: "landingTitre", widget: "markdown" },
+                  { label: "Image", name: "landingImage", widget: "image" },
+                  {
+                    label: "Bouton",
+                    name: "landingBouton",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Texte", name: "landingBoutonTexte", widget: "string" },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Services",
+              name: "services",
+              widget: "object",
+              fields:
+                [
+                  { label: "Sur-Titre", name: "serviceSurTitre", widget: "string" },
+                  { label: "Titre", name: "serviceTitre", widget: "string" },
+                  {
+                    label: "Service",
+                    name: "serviceBlock",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Titre", name: "serviceBlockTitre", widget: "string" },
+                        { label: "Texte", name: "serviceBlockTexte", widget: "markdown" },
+                        { label: "Image", name: "serviceBlockImage", widget: "image" },
+                        {
+                          label: "Tags",
+                          name: "serviceBlockTags",
+                          widget: "list",
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Contact",
+              name: "contact",
+              widget: "object",
+              fields:
+                [
+                  { label: "Titre", name: "contactTitre", widget: "string" },
+                  { label: "Sous-Titre", name: "contactSousTitre", widget: "string" },
+                  {
+                    label: "Bouton",
+                    name: "contactBouton",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Texte", name: "contactBoutonTexte", widget: "string" },
+                        { label: "Lien", name: "contactBoutonLien", widget: "string" },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "A Propos",
+              name: "aPropos",
+              widget: "object",
+              fields:
+                [
+                  { label: "Titre", name: "aProposTitre", widget: "string" },
+                  { label: "Contenu", name: "aProposContenu", widget: "markdown" },
+                  { label: "Image", name: "aProposImage", widget: "image" },
+                  {
+                    label: "Membres Equipe",
+                    name: "aProposEquipe",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Nom & Prénom", name: "aProposEquipeNom", widget: "string" },
+                        { label: "Poste", name: "aProposEquipePoste", widget: "string" },
+                        { label: "Email", name: "aProposEquipeEmail", widget: "string" },
+                        { label: "Téléphone", name: "aProposEquipeTelephone", widget: "string" },
+                        { label: "Photo", name: "aProposEquipePhoto", widget: "image" },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  { label: "Browser Tab Title", name: "browserTitle", widget: "string"},
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Description", name: "description", widget: "string" },
+                ],
+            }
+  - name: pages_simples
+    label: "Pages Simples"
+    folder: src/data/pages/simples
+    identifier_field: titre
+    create: true
+    fields:
+      - { label: "Url", name: "url", widget: "string" }
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Sous-Titre", name: "sousTitre", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+

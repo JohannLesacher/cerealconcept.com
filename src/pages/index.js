@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Landing from '../components/landing'
@@ -12,7 +13,7 @@ if (typeof window !== `undefined`) {
   ScrollReveal = require("scrollreveal").default
 }
 
-class IndexPage extends React.Component {
+export default class IndexPage extends React.Component {
   componentDidMount() {
     if (ScrollReveal !== undefined) {
       ScrollReveal().reveal('.to-reveal', {
@@ -36,6 +37,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    const { landing, services, contact, aPropos } = this.props.data.markdown.contenu
     return (
       <Layout>
         <SEO
@@ -43,13 +45,95 @@ class IndexPage extends React.Component {
           description="Artisans du web spécialistes WordPress nous développons des sites web sur-mesure pour des clients dans le monde entier."
           keywords={[`wordpress`, `e-commerce`, `référencement`, `toulouse`]}
         />
-        <Landing />
-        <Skills />
-        <ContactCta />
-        <About />
+        <Landing data={landing} />
+        <Skills data={services} />
+        <ContactCta data={contact} />
+        <About data={aPropos} />
       </Layout>
     )
   }
 }
 
-export default IndexPage
+export const IndexPageQuery = graphql`
+  query IndexPageQuery {
+    markdown: markdownRemark(fileAbsolutePath: {regex: "/accueil/"}) {
+      contenu: frontmatter {
+        titre
+        landing {
+          image: landingImage {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
+              }
+            }
+            relativePath
+            extension
+          }
+          titre: landingTitre
+          bouton: landingBouton {
+            lien: landingBoutonLien
+            texte: landingBoutonTexte
+          }
+        }
+        services {
+          serviceSurTitre
+          serviceTitre
+          serviceBlock {
+            serviceBlockImage {
+              childImageSharp {
+                fluid(maxWidth: 450, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  presentationWidth
+                }
+              }
+              relativePath
+              extension
+            }
+            serviceBlockTitre
+            serviceBlockTexte
+            serviceBlockTags
+          }
+        }
+        contact {
+          contactTitre
+          contactSousTitre
+          contactBouton {
+            contactBoutonLien
+            contactBoutonTexte
+          }
+        }
+        aPropos {
+          aProposImage {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                presentationWidth
+              }
+            }
+            relativePath
+            extension
+          }
+          aProposContenu
+          aProposTitre
+          aProposEquipe {
+            aProposEquipePhoto {
+              childImageSharp {
+                fluid(maxWidth: 500, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  presentationWidth
+                }
+              }
+              relativePath
+              extension
+            }
+            aProposEquipeEmail
+            aProposEquipeNom
+            aProposEquipePoste
+            aProposEquipeTelephone
+          }
+        }
+      }
+    }
+  }
+`
