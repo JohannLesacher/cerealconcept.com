@@ -10,26 +10,26 @@ date: 2019-02-11T16:53:38.157Z
 ---
 ## Editeur :
 
-Le site cerealconcept.com est édité par Johann Lesacher et Adrien Pierrin
-Présidents & Directeurs de la publication: Johann Lesacher et Adrien Pierrin
+Le site cerealconcept.com est édité par Johann Lesacher et Adrien Pierrin\
+Présidents & Directeurs de la publication: Johann Lesacher et Adrien Pierrin\
 Webmaster : Johann Lesacher et Adrien Pierrin
 
 ### Siège social
 
-**Johann Lesacher**
-46 boulevard des Minimes, 31200 Toulouse, France
+**Johann Lesacher**\
+46 boulevard des Minimes, 31200 Toulouse, France\
 SIRET: 753 503 085 00049
 
-**Adrien Pierrin**
-15 rue des Pâquerettes, 31500 Toulouse, France
+**Adrien Pierrin**\
+15 rue des Pâquerettes, 31500 Toulouse, France\
 SIRET: 788 957 405 00038
 
 ## Hébergement :
 
-[Netlify](https://www.netlify.com/)
-610 22nd Street
-Suite 315
-San Francisco, CA 94107
+[Netlify](https://www.netlify.com/)\
+610 22nd Street\
+Suite 315\
+San Francisco, CA 94107\
 Etats-Unis d'Amérique
 
 ## Créateur du site :
