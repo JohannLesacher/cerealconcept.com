@@ -29,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: `/data/media/`
+          include: `${__dirname}/static/img`
         },
         rule: {
           include: /svg/
@@ -40,7 +40,7 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/data/media`,
+        path: `${__dirname}/static/img`,
         name: 'uploads',
       },
     },
