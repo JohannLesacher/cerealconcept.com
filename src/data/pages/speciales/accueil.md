@@ -2,7 +2,6 @@
 titre: Création de Site Web à Toulouse
 landing:
   landingBouton:
-    landingBoutonLien: '#contact'
     landingBoutonTexte: Discutons de vos projets
   landingImage: /img/landing_main.svg
   landingTitre: >-
@@ -126,7 +125,27 @@ contact:
   contactSousTitre: Ça vous semble intéressant ? Contactez-nous.
   contactTitre: Contact
 aPropos:
-  aProposContenu: "Cereal Concept c'est d’abord l'association de deux entrepreneurs implantés à Toulouse. Depuis 2010 nous fournissons des services de qualité pour les professionnels TPE/PME comme pour les particuliers et indépendants.\r\n\n\rAvec plus de 8 ans d’expérience à manier les multiples technologies qui rendent le web un espace d’innovation constant, nous avons tissé des affinités avec de nombreux langages et outils tels que WordPress, React, WooCommerce, ou encore GatsbyJS.\r\n\n\rNous travaillons en collaboration étroite avec un réseau d’indépendants fiables et réactifs. Ces partenaires privilégiés, au savoir-faire complémentaire, nous permettent de réaliser tout types de projets d’envergure.\r\n\n\rNotre ambition est de vous accompagner de la structuration à la réalisation de votre idée, mobiliser toutes notre compétences pour vous assister dans la réussite de votre entreprise. Rencontrons nous !"
+  aProposContenu: >-
+    Cereal Concept c'est d’abord l'association de deux entrepreneurs implantés à
+    Toulouse. Depuis 2010 nous fournissons des services de qualité pour les
+    professionnels TPE/PME comme pour les particuliers et indépendants.
+
+
+    Avec plus de 8 ans d’expérience à manier les multiples technologies qui
+    rendent le web un espace d’innovation constant, nous avons tissé des
+    affinités avec de nombreux langages et outils tels que WordPress, React,
+    WooCommerce, ou encore GatsbyJS.
+
+
+    Nous travaillons en collaboration étroite avec un réseau d’indépendants
+    fiables et réactifs. Ces partenaires privilégiés, au savoir-faire
+    complémentaire, nous permettent de réaliser tous types de projets
+    d’envergure.
+
+
+    Notre ambition est de vous accompagner de la structuration à la réalisation
+    de votre idée, mobiliser toutes notre compétences pour vous assister dans la
+    réussite de votre entreprise. Rencontrons nous !
   aProposEquipe:
     - aProposEquipeEmail: j.lesacher@cerealconcept.com
       aProposEquipeNom: Johann Lesacher
