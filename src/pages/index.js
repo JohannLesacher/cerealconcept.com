@@ -72,7 +72,6 @@ export const IndexPageQuery = graphql`
           }
           titre: landingTitre
           bouton: landingBouton {
-            lien: landingBoutonLien
             texte: landingBoutonTexte
           }
         }
@@ -99,7 +98,6 @@ export const IndexPageQuery = graphql`
           contactTitre
           contactSousTitre
           contactBouton {
-            contactBoutonLien
             contactBoutonTexte
           }
         }

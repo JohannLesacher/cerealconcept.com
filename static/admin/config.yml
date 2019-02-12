@@ -74,7 +74,6 @@ collections:
                     fields:
                       [
                         { label: "Texte", name: "contactBoutonTexte", widget: "string" },
-                        { label: "Lien", name: "contactBoutonLien", widget: "string" },
                       ],
                   },
                 ],
