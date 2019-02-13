@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
-export default class IndexPage extends React.Component {
+export default class NosReferencesPage extends React.Component {
   render() {
     return (
       <Layout>
@@ -24,8 +24,8 @@ export default class IndexPage extends React.Component {
   }
 }
 
-export const IndexPageQuery = graphql`
-  query IndexPageQuery {
+export const NosReferencesPageQuery = graphql`
+  query NosReferencesPageQuery {
     markdown: markdownRemark(fileAbsolutePath: {regex: "/nos-references/"}) {
       contenu: frontmatter {
         titre
