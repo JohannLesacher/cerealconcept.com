@@ -128,7 +128,20 @@ class Contact extends React.Component {
           <div className="modal-background"></div>
           <div className="modal-content">
             <div className="section">
+              <div className="block has-text-centered">
+                <h2 className="title is-2">Contactez-nous !</h2>
+                <h4 className="subtitle is-4">Nous vous répondrons rapidement</h4>
+              </div>
+              <hr/>
               <Form handleSubmit={this.handleSubmit} ref="contactform"/>
+              <hr/>
+              <div className="block">
+                <h4 className="title is-4">Nous sommes aussi joignables par téléphone</h4>
+                <ul>
+                  <li>Johann : 06 71 54 15 53</li>
+                  <li>Adrien : 06 58 47 78 49</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

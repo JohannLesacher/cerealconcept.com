@@ -192,6 +192,10 @@ a:not(.button):not(.navbar-item) {
 }
 
 .section-contact-form {
+  .title {
+    font-weight: 900;
+  }
+
   .notifications {
     position: fixed;
     z-index: 50;
