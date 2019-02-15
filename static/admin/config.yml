@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: nos-references
   
 media_folder: src/data/media
 public_folder: /img
@@ -116,8 +116,9 @@ collections:
       - label: Nos Références
         name: nos-references
         file: "src/data/pages/speciales/nos-references.md"
-        fiedls:
+        fields:
           - { label: "Titre", name: "titre", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
           - {
             label: "SEO & Meta",
             name: "seo",

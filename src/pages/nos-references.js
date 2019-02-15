@@ -3,9 +3,11 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import ImageHandler from '../components/imageHandler'
 
 export default class NosReferencesPage extends React.Component {
   render() {
+    const { titre, image } = this.props.data.markdown.contenu
     return (
       <Layout>
         <SEO
@@ -15,10 +17,15 @@ export default class NosReferencesPage extends React.Component {
         />
         <section className="section section-nos-references">
           <div className="container">
-            <header>
-              <h1 className="title is-1">{this.props.data.titre}</h1>
+            <header className="has-text-centered">
+              <h1 className="title is-1">{titre}</h1>
             </header>
-          </div>
+            <div className="columns">
+              <div className="column">
+                <ImageHandler url={image}/>
+              </div>
+            </div>
+          </div>./johann.jpg
         </section>
       </Layout>
     )
@@ -30,6 +37,7 @@ export const NosReferencesPageQuery = graphql`
     markdown: markdownRemark(fileAbsolutePath: {regex: "/nos-references/"}) {
       contenu: frontmatter {
         titre
+        image
       }
     }
   }

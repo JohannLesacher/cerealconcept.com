@@ -9,6 +9,10 @@ svg {
   font-weight: 200;
 }
 
+.title {
+  font-weight: 900;
+}
+
 .gatsby-image-wrapper.is-rounded {
   border-radius: 290486px;
 }
@@ -86,6 +90,8 @@ a:not(.button):not(.navbar-item) {
   padding: 6rem 1.5rem;
 
   .title {
+    font-weight: 200;
+
     strong {
       font-weight: 900;
     }
@@ -95,10 +101,6 @@ a:not(.button):not(.navbar-item) {
 .section-skills {
   .skills .skill {
     padding: 2rem 0;
-
-    .title {
-      font-weight: 900;
-    }
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -124,10 +126,6 @@ a:not(.button):not(.navbar-item) {
 
 .section-about {
   padding: 6rem 1.5rem;
-
-  .title {
-    font-weight: 900;
-  }
 }
 
 .modal {
@@ -185,17 +183,9 @@ a:not(.button):not(.navbar-item) {
 
 .section-contact {
   background-color: $primary-lightest;
-
-  .title {
-    font-weight: 900;
-  }
 }
 
 .section-contact-form {
-  .title {
-    font-weight: 900;
-  }
-
   .notifications {
     position: fixed;
     z-index: 50;
@@ -270,10 +260,6 @@ form[name="contact"] {
 .section-footer {
   background: #f9f9f9;
 
-  .title {
-    font-weight: 900;
-  }
-
   a:not(.button) {
     color: $dark;
     box-shadow: inset 0 -1px 0 rgba($dark, 1);
@@ -297,10 +283,6 @@ form[name="contact"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  .title {
-    font-weight: 900;
-  }
 
   .image-404 {
     max-height: 90vh;
