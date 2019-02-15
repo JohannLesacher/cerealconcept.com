@@ -257,6 +257,72 @@ form[name="contact"] {
   }
 }
 
+.section-nos-references {
+  .realisation-box {
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      box-shadow: inset 0 0 10rem 1rem rgba($dark, 0.65);
+      background: rgba($dark, 0.65);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 172ms ease-in-out;
+
+      .title {
+        color: #fff;
+        font-weight: 600;
+        opacity: 0;
+        transition: all 172ms ease-in-out;
+      }
+
+      .subtitle {
+        color: #fff;
+        opacity: 0;
+        margin-bottom: 0;
+        transition: all 172ms ease-in-out;
+      }
+
+      .link {
+        color: #fff;
+        box-shadow: inset 0 -1px 0 #fff;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        transform: translateY(100%);
+        transition: all 172ms ease-in-out;
+      }
+
+      &:hover {
+        opacity: 1;
+        transition: all 172ms ease-in-out;
+
+        .title {
+          opacity: 1;
+          transition: all 172ms 72ms ease-in-out;
+        }
+
+        .subtitle {
+          opacity: 1;
+          transition: all 172ms 172ms ease-in-out;
+        }
+
+        .link {
+          transform: translateX(0);
+          transition: all 172ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
 .section-footer {
   background: #f9f9f9;
 

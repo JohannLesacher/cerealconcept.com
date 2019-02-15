@@ -125,6 +125,8 @@ collections:
               fields:
                 [
                   { label: "Nom du projet", name: "realisationsNom", widget: "string" },
+                  { label: "Description", name: "realisationsDescription", widget: "string" },
+                  { label: "Lien", name: "realisationsLien", widget: "url" },
                   { label: "Image", name: "realisationsImage", widget: "image" },
                 ],
             }

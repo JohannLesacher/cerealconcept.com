@@ -7,7 +7,7 @@ import ImageHandler from '../components/imageHandler'
 
 export default class NosReferencesPage extends React.Component {
   render() {
-    const { titre, imagetest } = this.props.data.markdown.contenu
+    const { titre, realisations } = this.props.data.markdown.contenu
     return (
       <Layout>
         <SEO
@@ -23,33 +23,18 @@ export default class NosReferencesPage extends React.Component {
             <div className="columns is-centered">
               <div className="column is-8">
                 <div className="columns is-multiline">
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
-                  <div className="column is-4">
-                    <ImageHandler image={imagetest} />
-                  </div>
+                  {realisations.map((realisation) => (
+                    <div className="column is-4">
+                      <div className="realisation-box">
+                        <ImageHandler image={realisation.realisationsImage} />
+                        <div className="overlay">
+                          <h3 className="title is-4">{realisation.realisationsNom}</h3>
+                          <h5 className="subtitle is-6">{realisation.realisationsDescription}</h5>
+                          <a href={realisation.realisationsLien} className="link">LIEN</a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -67,9 +52,11 @@ export const NosReferencesPageQuery = graphql`
         titre
         realisations {
           realisationsNom
+          realisationsDescription
+          realisationsLien
           realisationsImage {
             childImageSharp {
-              fluid(maxWidth: 1200, quality: 100) {
+              fluid(maxWidth: 500, maxHeight: 500, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
                 presentationWidth
               }
