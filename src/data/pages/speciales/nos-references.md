@@ -1,6 +1,10 @@
 ---
 titre: Nos références
-imagetest: /img/johann.jpg
+realisations:
+  - realisationsImage: /img/johann.jpg
+    realisationsNom: Le Barboteur
+  - realisationsImage: /img/adrien.png
+    realisationsNom: Cinespana
 seo:
   browserTitle: Nos références
   description: >-
