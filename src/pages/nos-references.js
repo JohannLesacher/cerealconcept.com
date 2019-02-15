@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-// import ImageHandler from '../components/imageHandler'
+import ImageHandler from '../components/imageHandler'
 
 export default class NosReferencesPage extends React.Component {
   render() {
@@ -11,7 +11,7 @@ export default class NosReferencesPage extends React.Component {
     return (
       <Layout>
         <SEO
-          title={this.props.data.markdown.titre}
+          title={this.props.data.markdown.contenu.titre}
           description="Artisans du web spécialistes WordPress nous développons des sites web sur-mesure pour des clients dans le monde entier."
           keywords={[`wordpress`, `e-commerce`, `référencement`, `toulouse`]}
         />
@@ -20,9 +20,37 @@ export default class NosReferencesPage extends React.Component {
             <header className="has-text-centered">
               <h1 className="title is-1">{titre}</h1>
             </header>
-            <div className="columns">
-              <div className="column">
-                h
+            <div className="columns is-centered">
+              <div className="column is-8">
+                <div className="columns is-multiline">
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                  <div className="column is-4">
+                    <ImageHandler image={imagetest} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -37,7 +65,19 @@ export const NosReferencesPageQuery = graphql`
     markdown: markdownRemark(fileAbsolutePath: {regex: "/nos-references/"}) {
       contenu: frontmatter {
         titre
-        imagetest
+        realisations {
+          realisationsNom
+          realisationsImage {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                presentationWidth
+              }
+            }
+            relativePath
+            extension
+          }
+        }
       }
     }
   }

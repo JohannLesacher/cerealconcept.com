@@ -14,7 +14,7 @@ const Header = () => (
         </div>
         <div className="navbar-menu">
           <div className="navbar-end">
-            <Link to="nos-references" className="navbar-item">
+            <Link to="/nos-references" className="navbar-item">
               Nos Références
             </Link>
             <span className="navbar-item">

@@ -118,7 +118,16 @@ collections:
         file: "src/data/pages/speciales/nos-references.md"
         fields:
           - { label: "Titre", name: "titre", widget: "string" }
-          - { label: "Image", name: "imagetest", widget: "image" }
+          - {
+              label: "Réalisations",
+              name: "realisations",
+              widget: "list",
+              fields:
+                [
+                  { label: "Nom du projet", name: "realisationsNom", widget: "string" },
+                  { label: "Image", name: "realisationsImage", widget: "image" },
+                ],
+            }
           - {
             label: "SEO & Meta",
             name: "seo",
