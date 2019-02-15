@@ -1,5 +1,6 @@
 ---
 titre: Nos références
+image: /img/johann.jpg
 seo:
   browserTitle: Nos références
   description: >-
@@ -7,3 +8,4 @@ seo:
     sur-mesure pour des clients dans le monde entier.
   title: Création de Site Web à Toulouse
 ---
+
