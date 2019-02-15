@@ -1,6 +1,6 @@
 ---
 titre: Nos références
-image: /img/johann.jpg
+imagetest: /img/johann.jpg
 seo:
   browserTitle: Nos références
   description: >-

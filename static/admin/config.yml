@@ -118,7 +118,7 @@ collections:
         file: "src/data/pages/speciales/nos-references.md"
         fields:
           - { label: "Titre", name: "titre", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image", name: "imagetest", widget: "image" }
           - {
             label: "SEO & Meta",
             name: "seo",

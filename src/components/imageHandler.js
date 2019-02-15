@@ -33,9 +33,14 @@ const ImageHandler = ({ image, alt, className }) => {
 
   if (!!childImageSharp) {
     // Image normale qui a été process
-    return (
-      <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} />
-    )
+    console.log(childImageSharp)
+    if (childImageSharp.fluid) {
+      return (
+        <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} />
+      )
+    } else {
+      <Img fixed={childImageSharp.fixed} alt={alt} className={className} />
+    }
   } else if (typeof image.relativePath === 'string' && image.extension === 'svg') {
     // SVG
     const Image = require('../../static/img/' + image.relativePath)
