@@ -9,10 +9,6 @@ realisations:
     realisationsImage: /img/efficycle.jpg
     realisationsLien: 'https://efficycle.fr'
     realisationsNom: Efficycle
-  - realisationsDescription: Création site ecommerce
-    realisationsImage: /img/madelin.jpg
-    realisationsLien: 'https://www.madelin-sa.com'
-    realisationsNom: Madelin S.A.
 seo:
   browserTitle: Nos Références
   description: Nos Références
