@@ -5,6 +5,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ImageHandler from '../components/imageHandler'
 
+const wrapperStyle = {
+  position: "absolute",
+}
+
 export default class NosReferencesPage extends React.Component {
   render() {
     const { titre, realisations } = this.props.data.markdown.contenu
@@ -19,18 +23,23 @@ export default class NosReferencesPage extends React.Component {
           <div className="container">
             <header className="has-text-centered">
               <h1 className="title is-1">{titre}</h1>
+              <h3 className="subtitle is-4">Découvrez nos références</h3>
             </header>
+          </div>
+        </section>
+        <section className="section section-nos-references">
+          <div className="container">
             <div className="columns is-centered">
               <div className="column is-8">
                 <div className="columns is-multiline">
-                  {realisations.map((realisation) => (
-                    <div className="column is-4">
+                  {realisations.map((realisation, index) => (
+                    <div className="column is-4" key={index} >
                       <div className="realisation-box">
-                        <ImageHandler image={realisation.realisationsImage} />
+                        <ImageHandler image={realisation.realisationsImage} className="screenshot" style={wrapperStyle} />
                         <div className="overlay">
                           <h3 className="title is-4">{realisation.realisationsNom}</h3>
                           <h5 className="subtitle is-6">{realisation.realisationsDescription}</h5>
-                          <a href={realisation.realisationsLien} className="link">LIEN</a>
+                          <a href={realisation.realisationsLien} className="link">Visiter le site</a>
                         </div>
                       </div>
                     </div>
@@ -56,7 +65,7 @@ export const NosReferencesPageQuery = graphql`
           realisationsLien
           realisationsImage {
             childImageSharp {
-              fluid(maxWidth: 500, maxHeight: 500, quality: 100) {
+              fluid(maxWidth: 500, quality: 92, cropFocus: NORTH) {
                 ...GatsbyImageSharpFluid_withWebp
                 presentationWidth
               }

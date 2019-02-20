@@ -28,14 +28,14 @@ const NonStretchedImage = props => {
   return <Img {...normalizedProps} />
 }
 
-const ImageHandler = ({ image, alt, className }) => {
+const ImageHandler = ({ image, alt, className, style }) => {
   const { childImageSharp } = image
 
   if (!!childImageSharp) {
     // Image normale qui a été process
     if (!!childImageSharp.fluid) {
       return (
-        <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} />
+        <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} style={style} />
       )
     } else {
       return (
