@@ -29,23 +29,19 @@ export default class NosReferencesPage extends React.Component {
         </section>
         <section className="section section-nos-references">
           <div className="container">
-            <div className="columns is-centered">
-              <div className="column is-8">
-                <div className="columns is-multiline">
-                  {realisations.map((realisation, index) => (
-                    <div className="column is-4" key={index} >
-                      <div className="realisation-box">
-                        <ImageHandler image={realisation.realisationsImage} className="screenshot" style={wrapperStyle} />
-                        <div className="overlay">
-                          <h3 className="title is-4">{realisation.realisationsNom}</h3>
-                          <h5 className="subtitle is-6">{realisation.realisationsDescription}</h5>
-                          <a href={realisation.realisationsLien} className="link">Visiter le site</a>
-                        </div>
-                      </div>
+            <div className="columns is-multiline">
+              {realisations.map((realisation, index) => (
+                <div className="column is-3" key={index} >
+                  <div className="realisation-box">
+                    <ImageHandler image={realisation.realisationsImage} className="screenshot" style={wrapperStyle} />
+                    <div className="overlay">
+                      <h3 className="title is-4">{realisation.realisationsNom}</h3>
+                      <h5 className="subtitle is-6">{realisation.realisationsDescription}</h5>
+                      <a href={realisation.realisationsLien} className="link">Visiter le site</a>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
