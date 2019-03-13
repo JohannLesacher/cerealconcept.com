@@ -14,7 +14,8 @@ module.exports = {
         background_color: `#44c2de`,
         theme_color: `#44c2de`,
         display: `standalone`,
-        icon: `src/images/cerealconcept-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/cerealconcept-icon.png`,
+        include_favicon: true,
       },
     },
     `gatsby-plugin-react-helmet`,
