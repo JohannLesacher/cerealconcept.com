@@ -30,7 +30,7 @@ export default class NosReferencesPage extends React.Component {
         <section className="section section-nos-references">
           <div className="container">
             <div className="columns is-multiline">
-              {realisations.map((realisation, index) => (
+              {realisations.filter((realisation) => realisation.realisationsAfficher).map((realisation, index) => (
                 <div className="column is-3" key={index} >
                   <div className="realisation-box">
                     <ImageHandler image={realisation.realisationsImage} className="screenshot" style={wrapperStyle} />
@@ -57,6 +57,7 @@ export const NosReferencesPageQuery = graphql`
         titre
         realisations {
           realisationsNom
+          realisationsAfficher
           realisationsDescription
           realisationsLien
           realisationsImage {
