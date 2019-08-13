@@ -156,7 +156,7 @@ aPropos:
       aProposEquipePhoto: /img/adrien.png
       aProposEquipePoste: Expert SEO & E-Commerce
       aProposEquipeTelephone: +33 658 477 849
-  aProposImage: /img/logocerealconcept.png
+  aProposImage: /img/logocerealconcept.svg
   aProposTitre: A propos
 seo:
   browserTitle: Création de Site Web à Toulouse
