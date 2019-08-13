@@ -6,8 +6,8 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
 
   createRedirect({
-    fromPath: "https://youthful-lamarr-1d1a58.netlify.com/*",
-    toPath: "https://cerealconcept.com/:splat",
+    fromPath: "https://cerealconcept.netlify.com/*",
+    toPath: "https://www.cerealconcept.com/:splat",
     isPermanent: true
   })
 

@@ -9,6 +9,10 @@ svg {
   font-weight: 200;
 }
 
+.title {
+  font-weight: 900;
+}
+
 .gatsby-image-wrapper.is-rounded {
   border-radius: 290486px;
 }
@@ -86,6 +90,8 @@ a:not(.button):not(.navbar-item) {
   padding: 6rem 1.5rem;
 
   .title {
+    font-weight: 200;
+
     strong {
       font-weight: 900;
     }
@@ -95,10 +101,6 @@ a:not(.button):not(.navbar-item) {
 .section-skills {
   .skills .skill {
     padding: 2rem 0;
-
-    .title {
-      font-weight: 900;
-    }
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -124,10 +126,6 @@ a:not(.button):not(.navbar-item) {
 
 .section-about {
   padding: 6rem 1.5rem;
-
-  .title {
-    font-weight: 900;
-  }
 }
 
 .modal {
@@ -185,17 +183,9 @@ a:not(.button):not(.navbar-item) {
 
 .section-contact {
   background-color: $primary-lightest;
-
-  .title {
-    font-weight: 900;
-  }
 }
 
 .section-contact-form {
-  .title {
-    font-weight: 900;
-  }
-
   .notifications {
     position: fixed;
     z-index: 50;
@@ -267,12 +257,95 @@ form[name="contact"] {
   }
 }
 
+.section-nos-references {
+  .realisation-box {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+
+    .screenshot {
+      top: 0;
+      width: 100%;
+      transform: translateY(0) translateX(0) translateZ(0);
+      transition:
+        transform 2s ease-in-out,
+        top 2s ease-in-out;
+    }
+
+    &:hover .screenshot {
+      top: 100%;
+      transform: translateY(-100%) translateX(0) translateZ(1px);
+      transition:
+        transform 2s ease-in-out,
+        top 2s ease-in-out;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      box-shadow: inset 0 0 10rem 1rem rgba($primary, 0.65);
+      background: rgba($primary, 0.65);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 172ms ease-in-out;
+
+      .title {
+        color: #fff;
+        font-weight: 600;
+        opacity: 0;
+        transition: all 172ms ease-in-out;
+      }
+
+      .subtitle {
+        color: #fff;
+        opacity: 0;
+        margin-bottom: 0;
+        transition: all 172ms ease-in-out;
+      }
+
+      .link {
+        color: #fff;
+        box-shadow: inset 0 -1px 0 #fff;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        transform: translateY(100%);
+        transition: all 172ms ease-in-out;
+      }
+
+      &:hover {
+        opacity: 1;
+        transition: all 172ms ease-in-out;
+
+        .title {
+          opacity: 1;
+          transition: all 172ms 72ms ease-in-out;
+        }
+
+        .subtitle {
+          opacity: 1;
+          transition: all 172ms 172ms ease-in-out;
+        }
+
+        .link {
+          transform: translateX(0);
+          transition: all 172ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
 .section-footer {
   background: #f9f9f9;
-
-  .title {
-    font-weight: 900;
-  }
 
   a:not(.button) {
     color: $dark;
@@ -297,10 +370,6 @@ form[name="contact"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  .title {
-    font-weight: 900;
-  }
 
   .image-404 {
     max-height: 90vh;
@@ -366,9 +435,13 @@ form[name="contact"] {
 
     .navbar {
       flex-direction: row;
+      flex-wrap: wrap;
 
       .navbar-brand {
-        flex-shrink: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
           max-width: 100%;
@@ -405,6 +478,30 @@ form[name="contact"] {
 
     .skill-content {
       text-align: left;
+    }
+  }
+
+  .section-nos-references {
+    .realisation-box {
+      .overlay {
+        opacity: 1;
+        transition: all 172ms ease-in-out;
+
+        .title {
+          opacity: 1;
+          transition: all 172ms 72ms ease-in-out;
+        }
+
+        .subtitle {
+          opacity: 1;
+          transition: all 172ms 172ms ease-in-out;
+        }
+
+        .link {
+          transform: translateX(0);
+          transition: all 172ms ease-in-out;
+        }
+      }
     }
   }
 }

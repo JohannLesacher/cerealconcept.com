@@ -120,7 +120,6 @@ services:
   serviceTitre: Comment pouvons-nous vous aider ?
 contact:
   contactBouton:
-    contactBoutonLien: '#contact'
     contactBoutonTexte: Lancer la discussion
   contactSousTitre: Ça vous semble intéressant ? Contactez-nous.
   contactTitre: Contact
@@ -157,7 +156,7 @@ aPropos:
       aProposEquipePhoto: /img/adrien.png
       aProposEquipePoste: Expert SEO & E-Commerce
       aProposEquipeTelephone: +33 658 477 849
-  aProposImage: /img/cerealconcept.png
+  aProposImage: /img/logocerealconcept.svg
   aProposTitre: A propos
 seo:
   browserTitle: Création de Site Web à Toulouse

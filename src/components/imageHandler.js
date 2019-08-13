@@ -28,14 +28,20 @@ const NonStretchedImage = props => {
   return <Img {...normalizedProps} />
 }
 
-const ImageHandler = ({ image, alt, className }) => {
+const ImageHandler = ({ image, alt, className, style }) => {
   const { childImageSharp } = image
 
   if (!!childImageSharp) {
     // Image normale qui a été process
-    return (
-      <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} />
-    )
+    if (!!childImageSharp.fluid) {
+      return (
+        <NonStretchedImage fluid={childImageSharp.fluid} alt={alt} className={className} style={style} />
+      )
+    } else {
+      return (
+        <Img fixed={childImageSharp.fixed} alt={alt} className={className} />
+      )
+    }
   } else if (typeof image.relativePath === 'string' && image.extension === 'svg') {
     // SVG
     const Image = require('../../static/img/' + image.relativePath)
