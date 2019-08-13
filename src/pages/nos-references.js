@@ -31,7 +31,7 @@ export default class NosReferencesPage extends React.Component {
           <div className="container">
             <div className="columns is-multiline">
               {realisations.filter((realisation) => realisation.realisationsAfficher).map((realisation, index) => (
-                <div className="column is-3" key={index} >
+                <div className="column is-3-desktop is-6-tablet" key={index} >
                   <div className="realisation-box">
                     <ImageHandler image={realisation.realisationsImage} className="screenshot" style={wrapperStyle} />
                     <div className="overlay">

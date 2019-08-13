@@ -435,9 +435,13 @@ form[name="contact"] {
 
     .navbar {
       flex-direction: row;
+      flex-wrap: wrap;
 
       .navbar-brand {
-        flex-shrink: 1;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
           max-width: 100%;
@@ -474,6 +478,30 @@ form[name="contact"] {
 
     .skill-content {
       text-align: left;
+    }
+  }
+
+  .section-nos-references {
+    .realisation-box {
+      .overlay {
+        opacity: 1;
+        transition: all 172ms ease-in-out;
+
+        .title {
+          opacity: 1;
+          transition: all 172ms 72ms ease-in-out;
+        }
+
+        .subtitle {
+          opacity: 1;
+          transition: all 172ms 172ms ease-in-out;
+        }
+
+        .link {
+          transform: translateX(0);
+          transition: all 172ms ease-in-out;
+        }
+      }
     }
   }
 }
