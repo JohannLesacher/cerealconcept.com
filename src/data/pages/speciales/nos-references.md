@@ -124,7 +124,7 @@ realisations:
   - realisationsAfficher: true
     realisationsDescription: Création de site web
     realisationsImage: /img/wilhemlatchoumia.png
-    realisationsLien: 'http://www.wilhemlatchoumia.com/'
+    realisationsLien: 'https://www.wilhemlatchoumia.fr/'
     realisationsNom: Wilhem Latchoumia
   - realisationsAfficher: true
     realisationsDescription: Création de site e-commerce
