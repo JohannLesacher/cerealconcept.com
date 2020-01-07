@@ -57,7 +57,7 @@ realisations:
     realisationsLien: 'https://ceciledohertybigara.com'
     realisationsNom: Cécile Doherty-Bigara
   - realisationsAfficher: true
-    realisationsDescription: '#Coaching #Formations #Mathématiques'
+    realisationsDescription: '#Coaching #Blocages #Mathématiques'
     realisationsImage: /img/mathssansstress.jpg
     realisationsLien: 'https://mathssansstress.fr/'
     realisationsNom: Maths Sans Stress
@@ -77,12 +77,12 @@ realisations:
     realisationsLien: 'http://musiquendialogue.org'
     realisationsNom: Musique En Dialogue
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Apiculture #Nature #Environnement'
     realisationsImage: /img/abeillesenliberte.jpg
     realisationsLien: 'https://abeillesenliberte.fr'
     realisationsNom: Abeilles en Liberté
   - realisationsAfficher: true
-    realisationsDescription: Création de site ecommerce
+    realisationsDescription: '#E-commerce #Ouvrages #Magazines'
     realisationsImage: /img/boutiqueterranmagazines.jpg
     realisationsLien: 'http://boutique.terranmagazines.fr'
     realisationsNom: Boutique Terran Magazines
@@ -107,41 +107,41 @@ realisations:
     realisationsLien: 'http://kravboca.com/'
     realisationsNom: Krav Boca
   - realisationsAfficher: true
-    realisationsDescription: Plateforme communautaire
+    realisationsDescription: '#Artisanat #Création #PlateformeCommunautaire'
     realisationsImage: /img/lesacledescreateurs.png
     realisationsLien: 'https://lescaledescreateurs.com/'
     realisationsNom: L'escale des Créateurs
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Architecture #Urbanisme #WebTV'
     realisationsImage: /img/kansei.png
-    realisationsLien: 'http://kansei.fr/'
+    realisationsLien: 'https://kansei.fr/'
     realisationsNom: Kansei
   - realisationsAfficher: false
-    realisationsDescription: Création de site web
+    realisationsDescription: '#AgenceArtistique #MusiqueClassique'
     realisationsImage: /img/agencedianedusaillant.png
     realisationsLien: 'https://agencedianedusaillant.com/'
     realisationsNom: Agence Diane du Saillant
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Artiste #Musicien #Pianiste'
     realisationsImage: /img/wilhemlatchoumia.png
     realisationsLien: 'https://www.wilhemlatchoumia.fr/'
     realisationsNom: Wilhem Latchoumia
   - realisationsAfficher: true
-    realisationsDescription: Création de site e-commerce
+    realisationsDescription: '#Education #Apprentissage #Accompagnement'
     realisationsImage: /img/apprendreetsepanouir.png
     realisationsLien: 'https://apprendre-epanouir.com/'
     realisationsNom: Apprendre & s'épanouir
   - realisationsAfficher: true
-    realisationsDescription: Création de site e-commerce
+    realisationsDescription: '#E-commerce #Féminisme #Newsletter'
     realisationsImage: /img/lesglorieuses.png
     realisationsLien: 'https://lesglorieuses.fr/'
     realisationsNom: Les Glorieuses
   - realisationsAfficher: true
-    realisationsDescription: Plateforme e-commerce
+    realisationsDescription: '#E-commerce #Bien-être #Féminité'
     realisationsImage: /img/pausesacree.png
     realisationsLien: 'https://pausesacree.com/'
     realisationsNom: Pause Sacrée
-  - realisationsAfficher: true
+  - realisationsAfficher: false
     realisationsDescription: Création de site e-commerce
     realisationsImage: /img/happease.png
     realisationsLien: 'https://happease.me/'
