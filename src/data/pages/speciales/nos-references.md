@@ -2,7 +2,7 @@
 titre: Nos Références
 realisations:
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: Site vitrine interactif
     realisationsImage: /img/canal-barboteur.jpg
     realisationsLien: 'http://canal-barboteur.com'
     realisationsNom: Canal Barboteur
