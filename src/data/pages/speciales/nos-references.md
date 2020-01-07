@@ -22,7 +22,7 @@ realisations:
     realisationsLien: 'https://alexandrepierrin.com'
     realisationsNom: Alexandre Pierrin
   - realisationsAfficher: false
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Territoire #Numérique #Créativité'
     realisationsImage: /img/antic.jpg
     realisationsLien: 'https://www.antic-paysbasque.com/'
     realisationsNom: L'Antic
@@ -47,17 +47,17 @@ realisations:
     realisationsLien: 'http://qualidistrict.com'
     realisationsNom: Quali District
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Festival #Cinéma #Espagne'
     realisationsImage: /img/cinespagnol.jpg
     realisationsLien: 'https://www.cinespagnol.com/'
     realisationsNom: Festival Cinespaña
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Bien-être #Yoga #Ayurvéda'
     realisationsImage: /img/ceciledohertybigara.jpg
     realisationsLien: 'https://ceciledohertybigara.com'
     realisationsNom: Cécile Doherty-Bigara
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Coaching #Formations #Mathématiques'
     realisationsImage: /img/mathssansstress.jpg
     realisationsLien: 'https://mathssansstress.fr/'
     realisationsNom: Maths Sans Stress
