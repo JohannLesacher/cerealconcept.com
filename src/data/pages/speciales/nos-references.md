@@ -2,12 +2,12 @@
 titre: Nos Références
 realisations:
   - realisationsAfficher: true
-    realisationsDescription: Site vitrine interactif
+    realisationsDescription: '#SiteVitrine #Restauration #Culture'
     realisationsImage: /img/canal-barboteur.jpg
-    realisationsLien: 'http://canal-barboteur.com'
+    realisationsLien: 'https://canal-barboteur.com'
     realisationsNom: Canal Barboteur
   - realisationsAfficher: true
-    realisationsDescription: Création de site web
+    realisationsDescription: '#E-Magazine #Société #Alternatives'
     realisationsImage: /img/efficycle.jpg
     realisationsLien: 'https://efficycle.fr'
     realisationsNom: Efficycle
