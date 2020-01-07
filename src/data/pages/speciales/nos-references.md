@@ -2,7 +2,7 @@
 titre: Nos Références
 realisations:
   - realisationsAfficher: true
-    realisationsDescription: '#SiteVitrine #Restauration #Culture'
+    realisationsDescription: '#Péniche #Restauration #Culture'
     realisationsImage: /img/canal-barboteur.jpg
     realisationsLien: 'https://canal-barboteur.com'
     realisationsNom: Canal Barboteur
@@ -12,14 +12,14 @@ realisations:
     realisationsLien: 'https://efficycle.fr'
     realisationsNom: Efficycle
   - realisationsAfficher: true
-    realisationsDescription: Création site ecommerce
+    realisationsDescription: '#E-commerce #Outillages #MadeInFrance'
     realisationsImage: /img/madelin.jpg
     realisationsLien: 'https://www.madelin-sa.com/'
     realisationsNom: Madelin S.A.
   - realisationsAfficher: false
-    realisationsDescription: Création de site web
+    realisationsDescription: '#Auteur #Réalisateur #Transmédia'
     realisationsImage: /img/alexandrepierrin.jpg
-    realisationsLien: 'http://alexandrepierrin.com'
+    realisationsLien: 'https://alexandrepierrin.com'
     realisationsNom: Alexandre Pierrin
   - realisationsAfficher: false
     realisationsDescription: Création de site web
