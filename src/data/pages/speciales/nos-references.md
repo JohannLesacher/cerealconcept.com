@@ -53,7 +53,7 @@ realisations:
     realisationsNom: Apprendre & s'épanouir
   - realisationsAfficher: true
     realisationsDescription: '#Coaching #Blocages #Mathématiques'
-    realisationsImage: /img/mathssansstress.jpg
+    realisationsImage: /img/mss.jpg
     realisationsLien: 'https://mathssansstress.fr/'
     realisationsNom: Maths Sans Stress
   - realisationsAfficher: true
