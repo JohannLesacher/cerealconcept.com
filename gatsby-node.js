@@ -57,6 +57,55 @@ exports.createPages = ({ actions, graphql }) => {
   })
 }
 
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  return graphql(`
+    {
+      allFile(
+        filter: {
+          internal: {mediaType: {eq: "text/markdown"}},
+          sourceInstanceName: {eq: "references"}
+        }
+      ){
+        edges {
+          node {
+            childMarkdownRemark {
+              fields {
+                slug
+              }
+              frontmatter {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
+    
+    if (result.data) {
+      const references = result.data.allFile.edges
+
+      references.forEach(edge => {
+        createPage({
+          path: edge.node.childMarkdownRemark.frontmatter.url,
+          component: path.resolve(
+            `src/components/templates/single-references.js`
+          ),
+          context: {
+            slug: edge.node.childMarkdownRemark.fields.slug,
+          },
+        })
+      })
+    }
+  })
+}
+
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions

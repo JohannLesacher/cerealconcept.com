@@ -155,3 +155,17 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Contenu", name: "body", widget: "markdown" }
 
+  - name: references
+    label: "Références"
+    folder: src/data/references
+    identifier_field: client
+    create: true
+    fields:
+      - { label: "Url", name: "url", widget: "string" }
+      - { label: "Client", name: "client", widget: "string" }
+      - { label: "Secteur d'activité", name: "secteur_activite", widget: "string" }
+      - { label: "Présentation courte", name: "presentation", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
+      - { label: "Lien", name: "lien", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list" }
