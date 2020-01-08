@@ -166,6 +166,6 @@ collections:
       - { label: "Secteur d'activité", name: "secteur_activite", widget: "string" }
       - { label: "Présentation courte", name: "presentation", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Contenu", name: "body", widget: "markdown" }
+      - { label: "Contenu", name: "contenu", widget: "markdown" }
       - { label: "Lien", name: "lien", widget: "string" }
       - { label: "Tags", name: "tags", widget: "list" }

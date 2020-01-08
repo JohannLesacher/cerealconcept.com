@@ -93,7 +93,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       references.forEach(edge => {
         createPage({
-          path: edge.node.childMarkdownRemark.frontmatter.url,
+          path: 'nos-references/' + edge.node.childMarkdownRemark.frontmatter.url,
           component: path.resolve(
             `src/components/templates/single-references.js`
           ),

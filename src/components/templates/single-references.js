@@ -36,8 +36,22 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        titre
-        sousTitre
+        url
+        client
+        secteur_activite
+        presentation
+        image {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 92, cropFocus: NORTH) {
+              ...GatsbyImageSharpFluid_withWebp
+              presentationWidth
+            }
+          }
+          relativePath
+          extension
+        }
+        lien
+        tags
       }
     }
   }

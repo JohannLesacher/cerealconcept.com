@@ -86,6 +86,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `references`,
+        path: `${__dirname}/src/data/references`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `pages-speciales`,
         path: `${__dirname}/src/data/pages/speciales`,
       },
