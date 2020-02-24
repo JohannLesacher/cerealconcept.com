@@ -148,7 +148,7 @@ aPropos:
   aProposEquipe:
     - aProposEquipeEmail: j.lesacher@cerealconcept.com
       aProposEquipeNom: Johann Lesacher
-      aProposEquipePhoto: /img/johann.jpg
+      aProposEquipePhoto: /img/img_20200223_153312_square.jpg
       aProposEquipePoste: Développeur Web Full Stack
       aProposEquipeTelephone: +33 671 541 553
     - aProposEquipeEmail: a.pierrin@cerealconcept.com
