@@ -2,7 +2,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
 
   createRedirect({
@@ -11,7 +11,7 @@ exports.createPages = ({ actions, graphql }) => {
     isPermanent: true
   })
 
-  return graphql(`
+  await graphql(`
     {
       allFile(
         filter: {
@@ -55,12 +55,8 @@ exports.createPages = ({ actions, graphql }) => {
       })
     }
   })
-}
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  return graphql(`
+  await graphql(`
     {
       allFile(
         filter: {
@@ -104,8 +100,9 @@ exports.createPages = ({ actions, graphql }) => {
       })
     }
   })
-}
 
+  return;
+}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
