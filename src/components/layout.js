@@ -10,7 +10,7 @@ import 'typeface-work-sans';
 
 import '../styles/main.scss'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, className }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -22,19 +22,20 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <div className={className}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <main className="main">
           {children}
         </main>
         <Footer />
-      </>
+      </div>
     )}
   />
 )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -1,6 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
-
+import { getFluidGatsbyImage } from 'gatsby-source-sanity'
+import clientConfig from '../../client-config'
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -24,7 +25,7 @@ const NonStretchedImage = props => {
       },
     }
   }
-
+  
   return <Img {...normalizedProps} />
 }
 
@@ -42,11 +43,38 @@ const ImageHandler = ({ image, alt, className, style }) => {
         <Img fixed={childImageSharp.fixed} alt={alt} className={className} />
       )
     }
-  } else if (typeof image.relativePath === 'string' && image.extension === 'svg') {
-    // SVG
-    const Image = require('../../static/img/' + image.relativePath)
+  } else if (typeof image.asset !== undefined && image.asset._type === "sanity.imageAsset") {
+    // Sanity Image
+    let maxWidth = 750
+
+    if (image.size) {
+      switch(image.size) {
+        case 'small':
+          maxWidth = 150
+          break
+        case 'medium':
+          maxWidth = 300
+          break
+        case 'large':
+          maxWidth = 750
+          break
+        case 'full':
+          maxWidth = 1500
+          break
+        default:
+          maxWidth = 300
+          break
+      }
+    }
+
+    let fluid = getFluidGatsbyImage(image.asset, {maxWidth: maxWidth}, clientConfig.sanity)
+
+    if (typeof fluid !== `undefined`) {
+      fluid.presentationWidth = maxWidth
+    }
+
     return (
-      <Image className={className} />
+      <NonStretchedImage fluid={fluid} alt={alt} className={className} style={style} />
     )
   }
 

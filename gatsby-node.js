@@ -11,97 +11,53 @@ exports.createPages = async ({ actions, graphql }) => {
     isPermanent: true
   })
 
-  await graphql(`
+  const pages = await graphql(`
     {
-      allFile(
-        filter: {
-          internal: {mediaType: {eq: "text/markdown"}},
-          sourceInstanceName: {eq: "pages-simples"}
-        }
-      ){
+      allSanityPage {
         edges {
           node {
-            childMarkdownRemark {
-              fields {
-                slug
-              }
-              frontmatter {
-                url
-              }
+            slug {
+              current
             }
           }
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
-    }
-    
-    if (result.data) {
-      const pagesSimples = result.data.allFile.edges
+  `)
 
-      pagesSimples.forEach(edge => {
-        createPage({
-          path: edge.node.childMarkdownRemark.frontmatter.url,
-          component: path.resolve(
-            `src/components/templates/page-simple.js`
-          ),
-          context: {
-            slug: edge.node.childMarkdownRemark.fields.slug,
-          },
-        })
-      })
-    }
+  pages.data.allSanityPage.edges.forEach(page => {
+    createPage({
+      path: page.node.slug.current,
+      component: path.resolve(`./src/templates/page.js`),
+      context: {
+        slug: page.node.slug.current,
+      },
+    })
   })
 
-  await graphql(`
+  const references = await graphql(`
     {
-      allFile(
-        filter: {
-          internal: {mediaType: {eq: "text/markdown"}},
-          sourceInstanceName: {eq: "references"}
-        }
-      ){
+      allSanityClient {
         edges {
           node {
-            childMarkdownRemark {
-              fields {
-                slug
-              }
-              frontmatter {
-                url
-              }
+            slug {
+              current
             }
           }
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
-    }
-    
-    if (result.data) {
-      const references = result.data.allFile.edges
+  `)
 
-      references.forEach(edge => {
-        createPage({
-          path: 'nos-references/' + edge.node.childMarkdownRemark.frontmatter.url,
-          component: path.resolve(
-            `src/components/templates/single-references.js`
-          ),
-          context: {
-            slug: edge.node.childMarkdownRemark.fields.slug,
-          },
-        })
-      })
-    }
+  references.data.allSanityClient.edges.forEach(reference => {
+    createPage({
+      path: 'nos-references/' + reference.node.slug.current,
+      component: path.resolve(`./src/templates/reference.js`),
+      context: {
+        slug: reference.node.slug.current,
+      },
+    })
   })
-
-  return;
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

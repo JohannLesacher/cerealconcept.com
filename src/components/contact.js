@@ -99,7 +99,7 @@ class Contact extends React.Component {
       // Open Modal actions
       const modalButtons = document.querySelectorAll('.modal-button')
       modalButtons.forEach(function(button) {
-        button.removeEventListener(...context.eventListenerOpen)
+        button.removeEventListener('click', context.eventListenerOpen)
       })
 
       // Close Modal actions
