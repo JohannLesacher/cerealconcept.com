@@ -56,9 +56,9 @@ module.exports = {
         projectId: process.env.GATSBY_SANITY_PROJECT_ID,
         dataset: process.env.GATSBY_SANITY_DATASET,
         useCdn: true,
-        // watchMode: true,
-        // overlayDrafts: true,
-        // token: process.env.GATSBY_SANITY_TOKEN,
+        watchMode: process.env.NODE_ENV === 'staging' ? true : false,
+        overlayDrafts: process.env.NODE_ENV === 'staging' ? true : false,
+        token: process.env.GATSBY_SANITY_TOKEN,
       },
     },
     // {
